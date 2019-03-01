@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color:#4A4EA4;
+  animation: blur 3s ;
+  font-family: 'Space Mono', monospace;
+  height: 100vh;
+  transition: 2s;
+}
+@keyframes blur {
+  0% {background-color: black;
+filter: blur(5px);}
+  100% {background-color: #4A4EA4;
+filter: blur(0px);}
+}
+
+/*Text Container*/
+.text-container {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  left: 10%;
+  top: 40%;
+}
+  .outer1{
+    overflow: hidden;
+    height: 55px;
+  }
+  .main-text-circle {
+    border: solid 4px #98a4b7;
+  	width: 40px;
+  	height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0;
+    transition: 1s;
+    transform: translateY(-50px) scale(0);
+  }
+  .main-text {
+    line-height: 50px;
+    font-size: 40px;
+    transition: 1s;
+    transform: translateY(-50px);
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+  }
+  .outer-space {
+    height: 20vh;
+    overflow: hidden;
+  }
+  .second-continue{
+    line-height: 20px;
+    font-size: 20px;
+    transition: 1s;
+    color: white;
+    transform: translateY(-20px);
+    animation: pulseSecond 1s infinite;
+    cursor: pointer;
+  }
+  @keyframes pulseSecond {
+    0% {color: #adadff;}
+    100%{color: #34679e;}
+  }
+  .outer2{
+    overflow: hidden;
+    height: 22px;
+  }
+  .continue-text {
+    display: inline-block;
+    line-height: 20px;
+    font-size: 20px;
+    transition: 1s;
+    transform: translateY(-20px);
+    color: #72ffe0;
+    animation: pulse 1s infinite;
+    width: 20%;
+    cursor: pointer;
+  }
+  .skip-text {
+    width: 20%;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    font-size: 20px;
+    transition: 1s;
+    transform: translateY(-20px);
+    color: gray;
+  }
+  @keyframes pulse {
+    0% {color: white;}
+    100%{color: #72ffe0;}
+  }
+  .long-text-holder {
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 70%;
+    left: 15%;
+    top: 10%;
+  }
+  .long-text {
+    font-size: 45px;
+  }
+  .long-text-continue {
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    animation: pulse2 1s infinite;
+  }
+  @keyframes pulse2 {
+    0% {color: black;}
+    100%{color: #2e4468;}
+  }
+  .Sagan {
+    position: absolute;
+    margin: 5% 0 0 25%;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: .5;
+  }
+  .carl {
+    display: inline-block;
+    text-align: center;
+  }
+  @keyframes move {
+  from {
+    left: 10%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+@keyframes moveBack {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 10%;
+  }
+}
+@keyframes beforeMoveBack{
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: -100%;
+  }
+}
+
+ #circle {
+	position: absolute;
+  border: solid 4px #b3b2ff;
+  background-color: #b3b2ff;
+	width: 20px;
+	height: 20px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fade 2s forwards;
+  animation-delay: 2s;
+}
+@keyframes fade {
+  0% {opacity: 0;}
+  100%  {opacity: .5;}
+}
+/*
+.intro {
+  left:0;
+  top:0;
+  position: absolute;
+  width: 0vh; height: 100vh;
+  border: solid 2px black;
+  background-color: black;
+  z-index: -1;
+  animation: intro 2s forwards;
+}
+
+@keyframes intro {
+        0% {width:0vh;}
+        100% {width:100vw;}
+    }*/

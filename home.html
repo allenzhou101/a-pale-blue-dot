@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div class = "gradient">
+    <div class = "words">We are made from stardust!</div>
+  </div>
+  <div class = "below">
+    <div id="scroll-target"></div>
+
+  </div>
+<style>
+.gradient {
+position: relative;
+min-height: 200px;
+background-color:  #4A4EA4;
+height: 100vh;
+z-index: 1;
+margin:0;
+}
+body {
+  margin: 0;
+  overflow-y: hidden;
+
+}
+.words {
+  transition: 2s;
+  width: 50%;
+  text-align: center;
+  font-size: 10vh;
+  color: white;
+  transform: scale(0);
+  position: absolute;
+  margin: 20% 25% 0 25%;
+  animation: scaling 2s 1 ;
+  animation-fill-mode: forwards;
+
+}
+@-webkit-keyframes scaling {
+From {
+    transform: scale(0);
+}
+To {
+    transform: scale(1);
+}
+.below {
+  height: 100vh;
+  background-color: #a0c4ff;
+}
+
+/*
+.gradient::before {
+position: absolute;
+content: "";
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-image: linear-gradient(#4A4EA4,#4A4EA4);
+z-index: -1;
+transition: opacity 0.5s linear;
+opacity: 0;
+}
+.gradient:hover::before {
+opacity: 1;
+}*/
+
+</style>
+<script>
+var delayInMilliseconds = 1200; //1.2 second
+
+setTimeout(function() {
+  //smoothScroll(document.getElementById('scroll-target'))
+}, delayInMilliseconds);
+
+</script>
+<script>
+  //autoscroll
+  window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+    scroll = function(c, a, b, i) {
+        i++; if (i > 50) return;
+        c.scrollTop = a + (b - a) / 50 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+    }
+  </script>
+</body>
+</html>
