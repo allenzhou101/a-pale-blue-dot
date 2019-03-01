@@ -14,10 +14,14 @@ width="2" height="0">-->
   <span id = "circle"></span>
   <div class = "particle-background">
     <div class = "text-container">
+      <div class = "outer1.5">
+        <div class = "main-text2"></div>
+      </div>
       <div class = "outer1">
         <div class = "main-text-circle"></div>
         <div class = "main-text"></div>
       </div>
+
       <div class = "outer-space">
         <div class = "second-continue" onclick = "thirdEvent()">continue</div>
       </div>
@@ -76,29 +80,31 @@ function thirdEvent() {
 <script>
 function secondEvent() {
   //document.body.style = "transform: scale(1.3); transition: 2s; transform-origin: left;";
- document.body.style.transform = "scale(1.1)";
+ document.body.style.transform = "scale(.9)";
  document.querySelector('.main-text').style.transform = "translateY(-50px)";
  document.querySelector('.continue-text').style.transform = "translateY(-20px)";
  document.querySelector('.skip-text').style.transform = "translateY(-20px)";
- document.querySelector('.main-text-circle').style = "transform: translateY(-50px) scale(0);  opacity: 0;";
+ document.querySelector('.main-text-circle').style = "transform: translateY(-50px) scale(0); opacity: 0;";
 
 var delay1 = 1000;
 setTimeout(function(){
-document.body.style = "transform: scale(1.1); background-color: white;";
-document.querySelector('.main-text').innerHTML = "You're alive right this second.";
-document.querySelector('.main-text').style = "transform: translateY(0); color: black;";
+document.body.style = "transform: scale(.9); background-color: white;";
+/*document.querySelector('.main-text').innerHTML = "You're alive right this second.";
+document.querySelector('.main-text').style = "transform: translateY(0); color: black;";*/
+document.querySelector('.main-text2').innerHTML = "You're alive right this second.";
+document.querySelector('.main-text2').style = "transform: translateY(0); color: black;";
 }, delay1);
 setTimeout(function(){
-document.body.style.transform = "scale(1.2)";
+document.body.style.transform = "scale(1.4)";
 document.querySelector('.main-text').style.transform = "translateY(-60px)";
 }, delay1 + 2000);
 setTimeout(function(){
 document.querySelector('.main-text').innerHTML = "That's an amazing thing.";
-document.querySelector('.main-text').style.transform = "translateY(0px)";
+document.querySelector('.main-text').style = "color: black; transform: translateY(0px)";
 }, delay1 + 3000);
 setTimeout(function(){
 document.querySelector('.second-continue').style.transform = "translateY(0)";
-}, delay1 + 3500);
+}, delay1 + 4000);
 }
 /*
 var delay4 = 10000;
