@@ -6,8 +6,12 @@
   <div class = "gradient">
     <div class = "words">We are made from stardust!
 </div>
-<iframe class = "sun_video" width="420" height="345" src="sun_video.mp4">
-</iframe>
+<div class = "words2">This site is currently under construction...
+</div>
+<video width="320" height="240" autoplay class = "sun_video">
+  <source src="sun_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
   </div>
   <div class = "below">
     <div id="scroll-target"></div>
@@ -67,6 +71,9 @@ body {
   animation: scaling 2s;
   animation-fill-mode: forwards;
 
+}
+.words2{
+  color: white;
 }
 @-webkit-keyframes scaling {
 From {
