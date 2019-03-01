@@ -118,10 +118,19 @@ filter: blur(0px);}
     visibility: hidden;
     pointer-events: none;
     opacity: .5;
+
   }
   .carl {
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     display: inline-block;
     text-align: center;
+    transition: .5s;
+  }
+  .carl:hover {
+      color: black;
   }
   @keyframes move {
   from {

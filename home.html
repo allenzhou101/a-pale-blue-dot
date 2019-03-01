@@ -4,17 +4,46 @@
 </head>
 <body>
   <div class = "gradient">
-    <div class = "words">We are made from stardust!</div>
+    <div class = "words">We are made from stardust!
+</div>
+<iframe class = "sun_video" width="420" height="345" src="sun_video.mp4">
+</iframe>
   </div>
   <div class = "below">
     <div id="scroll-target"></div>
 
   </div>
 <style>
+.sun_video {
+  border: none;
+  pointer-events: none;
+  transition: 2s ease-out;
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  margin: 20% 25% 0 25%;
+  animation: enter 2s forwards;
+  animation-delay: 2s;
+  opacity: 0;
+
+}
+@keyframes enter {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes blur {
+  0% {background-color: #4A4EA4;
+filter: blur(5px);}
+  100% {background-color: black;
+filter: blur(0px);}
+}
 .gradient {
 position: relative;
 min-height: 200px;
-background-color:  #4A4EA4;
 height: 100vh;
 z-index: 1;
 margin:0;
@@ -22,18 +51,20 @@ margin:0;
 body {
   margin: 0;
   overflow-y: hidden;
+  animation: blur 3s forwards;
+  background-color: black;
 
 }
 .words {
-  transition: 2s;
+  transition: 2s ease-out;
   width: 50%;
   text-align: center;
   font-size: 10vh;
   color: white;
   transform: scale(0);
   position: absolute;
-  margin: 20% 25% 0 25%;
-  animation: scaling 2s 1 ;
+  margin: 10% 25% 0 25%;
+  animation: scaling 2s;
   animation-fill-mode: forwards;
 
 }
