@@ -45,6 +45,19 @@ filter: blur(0px);}
     vertical-align: top;
     color: white;
   }
+  .outer1.5{
+    overflow: hidden;
+    height: 55px;
+    margin-bottom: 10vh;
+  }
+  .main-text2 {
+    line-height: 50px;
+    transition: 1s;
+    transform: translateY(-50px);
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+  }
   .outer-space {
     height: 20vh;
     overflow: hidden;
