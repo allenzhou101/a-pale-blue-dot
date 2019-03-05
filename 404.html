@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div class = "num">404</div>
+<div class = "text">The page you're looking for can't be found. <br>
+Anyways, let's enjoy this fun science joke.
+</div>
+<div class = "message">
+  <img src = "pendulumjoke.jpg" alt = "A fun pendulum joke" class = "image">
+  <iframe src="https://giphy.com/embed/sj0s92UR5gR44"
+   height="300vh"
+    frameBorder="0"  class = "hov"></iframe>
+</div>
+<div class = "text2" onclick = "goHome()">
+  Go home!
+</div>
+<style>
+body {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+
+}
+  .num {
+    font-size: 150px;
+    height: 30vh;
+
+  }
+  .text {
+    font-size: 30px;
+    height: 20vh;
+  }
+  .message {
+    height: 85vh;
+    display: inline-block;
+  }
+  .message:hover .hov {
+    opacity: 1;
+  }
+  .image {
+    border: 2px solid black;
+  }
+  .hov {
+    transition: .5s;
+    pointer-events: none;
+    position: absolute;
+    top: 60vh;
+    left: 10%;
+    width: 80%;
+    opacity: 0;
+    padding-left: -20vh;
+  }
+  .text2 {
+    font-size: 30px;
+    height: 20vh;
+    cursor: pointer;
+    transition: .5s;
+  }
+  .text2:hover {
+    color: gray;
+  }
+</style>
+<script>
+function goHome() {
+  document.location.href = "index.html";
+}
+</script>
+</body>
+</html>
