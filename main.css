@@ -11,7 +11,7 @@ body {
   animation: blur 1.5s;
   font-family: 'Space Mono', monospace;
   height: 100vh;
-  transition: 2s;
+  transition: 1s;
   animation-timing-function: ease-out;
 
 }
@@ -78,6 +78,17 @@ filter: blur(0px);}
     transform: translateY(-20px);
     animation: pulseSecond 1s infinite;
     cursor: pointer;
+    pointer-events: none;
+  }
+  .second-continue:hover {
+    transform: rotate(5deg) !important;
+  }
+  .second-continue:hover .o2 {
+    transform: scale(.5);
+  }
+  .o2 {
+    transition: 1s;
+     display: inline-block;
   }
   @keyframes pulseSecond {
     0% {color: #adadff;}
@@ -98,6 +109,17 @@ filter: blur(0px);}
     width: 20%;
     cursor: pointer;
   }
+  .continue-text:hover {
+    transform: scale(1.5) !important;
+  }
+  .o {
+     display: inline-block;
+     transition: 1s;
+  }
+  .continue-text:hover .o {
+    transform: scale(.5) !important;
+
+  }
   .skip-text {
     width: 20%;
     cursor: pointer;
@@ -107,6 +129,9 @@ filter: blur(0px);}
     transition: 1s;
     transform: translateY(-20px);
     color: gray;
+  }
+  .skip-text:hover {
+    transform: scale(.8) !important;
   }
   @keyframes pulse {
     0% {color: white;}
@@ -119,15 +144,42 @@ filter: blur(0px);}
     width: 70%;
     left: 15%;
     top: 10%;
+    transition: 1s;
   }
+
   .long-text {
     font-size: 45px;
+  }
+  .the-one-long-text {
+    display: inline-block;
+  }
+  @keyframes fadeLong {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   .long-text-continue {
     font-size: 20px;
     cursor: pointer;
     color: black;
     animation: pulse2 1s infinite;
+    transition: 1s;
+    opacity: 0;
+  }
+  .long-text-continue:hover {
+    transform: rotate(-10deg) scale(1.5);
+  }
+  .long-text-continue:hover .o4{
+    transform:  scale(1.6);
+  }
+  .o4 {
+    transition: 1s;
+    display: inline-block;
   }
   @keyframes pulse2 {
     0% {color: black;}
@@ -142,6 +194,7 @@ filter: blur(0px);}
 
   }
   .carl {
+    pointer-events: none;
     font-size: 30px;
     color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -149,6 +202,7 @@ filter: blur(0px);}
     display: inline-block;
     text-align: center;
     transition: .5s;
+    opacity: 0;
   }
   .carl:hover {
       color: black;
@@ -195,6 +249,10 @@ filter: blur(0px);}
 @keyframes fade {
   0% {opacity: 0;}
   100%  {opacity: .5;}
+}
+@keyframes fade2 {
+  0% {opacity: .5;}
+  100%  {opacity: 1;}
 }
 /*
 .intro {
