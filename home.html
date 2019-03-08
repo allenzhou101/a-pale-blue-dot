@@ -1,140 +1,129 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow-y: hidden;
+      background-color: #4A4E4A;
+    }
+    #root {
+      overflow-y: auto;
+      overflow-x: hidden;
+      transform: rotate(-90deg) translateY(-47.7%);
+      transform-origin: right top;
+      height: 100vw;
+      width: 100vh;
+      background-color: black;
+      color: white;
+    }
+    #root > div {
+      transform: rotate(90deg) translateX(100%);
+      transform-origin: right top;
+    }
+    .box {
+      width: 50vw;
+      height: 50vw;
+      font-size: 100pt;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .intro {
+      background-color: #4A4EA4;
+      height: 100vh;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      0% {
+        filter: brightness(100%);
+        height: 100vh;
+      }
+      100% {
+        filter: brightness(50%);
+        height: 0vh;
+      }
+    }
+    #box0 {
+      color: white;
+      font-size: 20px;
+    }
+      .sun_video {
+        margin-top: 40%;
+        transition: 1s;
+        transform: scale(1);
+      }
+      .sun_video:hover {
+        transform: scale(1.2);
+
+      }
+      @keyframes sunPulse {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(2);
+        }
+      }
+    #box1 {
+      color: green;
+    }
+  </style>
 </head>
 <body>
-  <div class = "gradient">
-    <div class = "words">We are made from stardust!
-</div>
-<div class = "words2">This site is currently under construction...
-</div>
-<video width="320" height="240" autoplay loop class = "sun_video">
-  <source src="sun_video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <div class = "intro"></div>
+  <div id="topnav">
   </div>
-  <div class = "below">
-    <div id="scroll-target"></div>
-
+  <div id="root">
+    <div class="box" id = "box0">
+      This site is under construction
+      <video width="320" height="240" loop autoplay class = "sun_video">
+        <source src="sun_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="box" id = "box1"></div>
+    <div class="box" id = "box2">2</div>
+    <div class="box" id = "box3">3</div>
+    <div class="box" id = "box4">4</div>
+    <div class="box" id = "box5">5</div>
+    <div class="box" id = "box6">6</div>
+    <div class="box" id = "box7">7</div>
+    <div class="box" id = "box7">8</div>
+    <div class="box" id = "box7">9</div>
   </div>
-<style>
-.sun_video {
-  border: none;
-  pointer-events: none;
-  transition: 2s ease-out;
-  width: 50%;
-  text-align: center;
-  position: absolute;
-  margin: 20% 25% 0 25%;
-  animation: enter 2s forwards;
-  animation-delay: 2s;
-  opacity: 0;
+  <script type="text/javascript">
+    var colors = ["540D6E","EE4266","FFD23F","3BCEAC","0EAD69"];
+    var root = document.getElementById("root");
+    /*
+    for(let i = 0; i < 10; i++) {
+      var box = document.createElement("div");
+      box.className = "box";
+      box.innerText = i;
+      box.style.backgroundColor = "#" + colors[i%5];
+      root.appendChild(box);
+    }*/
 
-}
-@keyframes enter {
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}
-@keyframes blur {
-  0% {background-color: #4A4EA4;
-filter: blur(5px);}
-  100% {background-color: black;
-filter: blur(0px);}
-}
-.gradient {
-position: relative;
-min-height: 200px;
-height: 100vh;
-z-index: 1;
-margin:0;
-}
-body {
-  margin: 0;
-  overflow-y: hidden;
-  animation: blur 3s forwards;
-  background-color: black;
 
-}
-.words {
-  transition: 2s ease-out;
-  width: 50%;
-  text-align: center;
-  font-size: 10vh;
-  color: white;
-  transform: scale(0);
-  position: absolute;
-  margin: 10% 25% 0 25%;
-  animation: scaling 2s;
-  animation-fill-mode: forwards;
+    var len = root.childElementCount;
+    console.log(root.childNodes);
 
-}
-.words2{
-  color: white;
-}
-@-webkit-keyframes scaling {
-From {
-    transform: scale(0);
-}
-To {
-    transform: scale(1);
-}
-.below {
-  height: 100vh;
-  background-color: #a0c4ff;
-}
+    root.insertBefore(root.lastElementChild, root.firstElementChild);
+    root.scrollTop = root.firstElementChild.clientWidth;
 
-/*
-.gradient::before {
-position: absolute;
-content: "";
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-background-image: linear-gradient(#4A4EA4,#4A4EA4);
-z-index: -1;
-transition: opacity 0.5s linear;
-opacity: 0;
-}
-.gradient:hover::before {
-opacity: 1;
-}*/
-
-</style>
-<script>
-var delayInMilliseconds = 1200; //1.2 second
-
-setTimeout(function() {
-  //smoothScroll(document.getElementById('scroll-target'))
-}, delayInMilliseconds);
-
-</script>
-<script>
-  //autoscroll
-  window.smoothScroll = function(target) {
-    var scrollContainer = target;
-    do { //find scroll container
-        scrollContainer = scrollContainer.parentNode;
-        if (!scrollContainer) return;
-        scrollContainer.scrollTop += 1;
-    } while (scrollContainer.scrollTop == 0);
-    var targetY = 0;
-    do { //find the top of target relatively to the container
-        if (target == scrollContainer) break;
-        targetY += target.offsetTop;
-    } while (target = target.offsetParent);
-    scroll = function(c, a, b, i) {
-        i++; if (i > 50) return;
-        c.scrollTop = a + (b - a) / 50 * i;
-        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    root.onscroll = function(e) {
+      if(root.scrollTop < screen.width) {
+          root.insertBefore(root.lastChild, root.firstChild);
+      } else if(root.scrollTop + root.clientHeight > root.scrollHeight - screen.width) {
+          root.appendChild(root.firstChild);
+      }
     }
-    // start scrolling
-    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
-    }
+
+
   </script>
 </body>
 </html>
