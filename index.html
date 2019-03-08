@@ -75,8 +75,8 @@ function fourthEvent() {
   var delayInMilliseconds = 1000;
   setTimeout(function() {
     document.body.style = "transform: scale(.001); background-color: #4A4EA4";
-    var delay2 = 1000;
-    setTimeout(function(){document.location.href = "home.html";}, delay2);
+    var delay2 = 00;
+    setTimeout(function(){document.location.href = "home2.html";}, delay2);
     //document.body.style = "background-color: #E884A1;";
   }, delayInMilliseconds);
 }
@@ -121,7 +121,7 @@ setTimeout(function() {
             clas = "." + clas;
 
             num+= 1;
-            var x = num / (200-num);
+            var x = num / (250-num);
 
 
             document.querySelector(clas).style = "display: inline-block; opacity: 0; transform: scale(0); animation: .5s fadeLong forwards; animation-delay:" + x + "s;";
@@ -148,7 +148,7 @@ function secondEvent() {
  document.querySelector('.continue-text').style = "transform: translateY(-20px);";
  document.querySelector('.skip-text').style.transform = "translateY(-20px)";
  document.querySelector('.main-text-circle').style = "transform: translateY(-50px) scale(0); opacity: 0;";
-var delay1 = 1000;
+var delay1 = 500;
 setTimeout(function(){
 document.body.style = "transform: scale(2.8); background-color: white;";
 /*document.querySelector('.main-text').innerHTML = "You're alive right this second.";
@@ -159,17 +159,17 @@ document.querySelector('.main-text2').style = "transform: translateY(0); color: 
 setTimeout(function(){
 document.body.style.transform = "scale(1.4)";
 document.querySelector('.main-text').style.transform = "translateY(-60px)";
-}, delay1 + 1500);
+}, delay1 + 1000);
 setTimeout(function(){
 document.querySelector('.main-text').innerHTML = "That's an amazing thing.";
 document.querySelector('.main-text').style = "color: black; transform: translateY(0px)";
-}, delay1 + 2500);
+}, delay1 + 1500);
 setTimeout(function(){
 //document.querySelector('.second-continue').style = " visibility: visible;";
-}, delay1 + 3000);
+}, delay1 + 2000);
 setTimeout(function(){
 document.querySelector('.second-continue').style = "pointer-events: all; transform: translateY(0);";
-}, delay1 + 3500);
+}, delay1 + 2500);
 }
 /*
 var delay4 = 10000;
