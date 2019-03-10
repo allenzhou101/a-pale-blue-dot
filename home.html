@@ -3,6 +3,8 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+
   <title>Portfolio</title>
   <style>
     body {
@@ -10,6 +12,7 @@
       height: 100vh;
       overflow-y: hidden;
       background-color: #4A4E4A;
+      font-family: 'Space Mono', monospace;
     }
     #root {
       overflow-y: auto;
@@ -34,9 +37,64 @@
       display: none;
     }
     .intro {
-      background-color: #4A4EA4;
+      background-color: white;
       height: 100vh;
-      animation: fadeIn 1s forwards;
+      width: 100%;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-delay: 4s;
+      animation-fill-mode: forwards;
+    }
+    .text-container {
+      color: black;
+      position: absolute;
+      text-align: center;
+      width: 80%;
+      left: 10%;
+      top: 40%;
+      transform: scale(1.4);
+    }
+    .top, .bottom {
+      overflow: hidden;
+      line-height: 50px;
+
+    }
+    .top-text {
+      display: inline-block;
+      font-size: 20px;
+      transform: translateY(-60px);
+      animation-name: textIn;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+    .bottom-text {
+      display: inline-block;
+      font-size: 40px;
+      transform: translateY(-60px);
+      animation-name: textIn;
+      animation-duration: 2s;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
+    }
+    .o {
+      font-size: 20px;
+      animation: textIn 2s forwards;
+      display: inline-block;
+    }
+    .o2 {
+      font-size: 40px;
+      animation: textIn 2s forwards;
+      display: inline-block;
+    }
+
+    @keyframes textIn {
+        0% {
+          transform: translateY(-60px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
     }
     @keyframes fadeIn {
       0% {
@@ -50,7 +108,6 @@
     }
     #box0 {
       color: white;
-      font-size: 20px;
     }
       .sun_video {
         margin-top: 40%;
@@ -59,6 +116,11 @@
       }
       .sun_video:hover {
         transform: scale(1.2);
+
+      }
+      .text {
+        margin-top: 40%;
+        font-size: 20px;
 
       }
       @keyframes sunPulse {
@@ -75,16 +137,28 @@
   </style>
 </head>
 <body>
-  <div class = "intro"></div>
+  <div class = "intro">
+    <div class = "text-container">
+      <div class = "top">
+        <div class = "top-text">Y</div><div class = "o">ou</div><div class = "top-text">'</div><div class = "o">r</div><div class = "top-text">e</div>
+        <div class = "top-text">aliv</div><div class = "o">e r</div><div class = "top-text">ight <div class = "o">t</div>his second.</div>
+      </div>
+      <div class = "bottom">
+        <div class = "bottom-text">That's</div> <div class = "bottom-text">an</div> <div class = "o2">a</div><div class = "bottom-text">mazing</div> <div class = "o2">th</div><div class = "bottom-text">ing.</div>
+      </div>
+    </div>
+  </div>
+
+
   <div id="topnav">
   </div>
   <div id="root">
     <div class="box" id = "box0">
-      This site is under construction
-      <video width="320" height="240" loop autoplay class = "sun_video">
+      <div class = "text"><br>This site is currently under construction</div>
+      <!--<video width="320" height="240" loop autoplay class = "sun_video">
         <source src="sun_video.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video>
+      </video>-->
     </div>
     <div class="box" id = "box1"></div>
     <div class="box" id = "box2">2</div>
@@ -97,6 +171,14 @@
     <div class="box" id = "box7">9</div>
   </div>
   <script type="text/javascript">
+    var delay = 5000;
+    setTimeout(function() {
+      //document.querySelector('.top-text').style = "transform: translate(-60px) !important;";
+      //document.querySelector('.bottom-text').style = "transform: translate(-60px) !important;";
+
+    }, delay)
+
+
     var colors = ["540D6E","EE4266","FFD23F","3BCEAC","0EAD69"];
     var root = document.getElementById("root");
     /*
