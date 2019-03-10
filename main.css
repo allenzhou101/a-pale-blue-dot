@@ -13,7 +13,7 @@ body {
   height: 100vh;
   transition: 1s;
   animation-timing-function: ease-out;
-
+  pointer-events: all;
 }
 
 @keyframes blur {
@@ -47,7 +47,7 @@ filter: blur(0px);}
   .main-text {
     line-height: 50px;
     font-size: 40px;
-    transition: 1s;
+    transition: 1.5s;
     transform: translateY(-50px);
     display: inline-block;
     vertical-align: top;
@@ -102,15 +102,15 @@ filter: blur(0px);}
     display: inline-block;
     line-height: 20px;
     font-size: 20px;
-    transition: 1s;
+    transition: 1.5s;
     transform: translateY(-20px);
     color: #72ffe0;
     animation: pulse 1s infinite;
-    width: 20%;
     cursor: pointer;
+    pointer-events: none;
   }
   .continue-text:hover {
-    transform: scale(1.5) !important;
+    transform: scale(1.1) !important;
   }
   .o {
      display: inline-block;
@@ -121,12 +121,11 @@ filter: blur(0px);}
 
   }
   .skip-text {
-    width: 20%;
     cursor: pointer;
     display: inline-block;
     line-height: 20px;
     font-size: 20px;
-    transition: 1s;
+    transition: 1.5s;
     transform: translateY(-20px);
     color: gray;
   }
@@ -175,7 +174,7 @@ filter: blur(0px);}
     transform: rotate(-10deg) scale(1.5);
   }
   .long-text-continue:hover .o4{
-    transform:  scale(1.6);
+    transform:  scale(.5);
   }
   .o4 {
     transition: 1s;
@@ -242,13 +241,15 @@ filter: blur(0px);}
 	width: 20px;
 	height: 20px;
   border-radius: 50%;
-  opacity: 0;
-  animation: fade 2s forwards;
-  animation-delay: .5s;
+  opacity: .5;
 }
 @keyframes fade {
   0% {opacity: 0;}
   100%  {opacity: .5;}
+}
+@keyframes fade3 {
+  0% {opacity: .5;}
+  100%  {opacity: 0;}
 }
 @keyframes fade2 {
   0% {opacity: .5;}
