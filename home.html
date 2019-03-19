@@ -5,37 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 
-  <title>Portfolio</title>
+  <title>A Pale Blue Dot</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      overflow-x: hidden;
       overflow-y: hidden;
+      height: 100vh;
       background-color: #4A4E4A;
       font-family: 'Space Mono', monospace;
-    }
-    #root {
-      overflow-y: auto;
-      overflow-x: hidden;
-      transform: rotate(-90deg) translateY(-47.7%);
-      transform-origin: right top;
-      height: 100vw;
-      width: 100vh;
-      background-color: black;
       color: white;
+      box-sizing: border-box;
     }
-    #root > div {
-      transform: rotate(90deg) translateX(100%);
-      transform-origin: right top;
+    .container {
+      height: 100vh;
+      white-space: nowrap;
     }
-    .box {
-      width: 50vw;
-      height: 50vw;
-      font-size: 70pt;
+    .box-1, .box-2 {
+      width: 5000px;
+      height: 100vh;
+      display: inline-block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: black;
     }
-    ::-webkit-scrollbar {
-      display: none;
+    .box-1 {
+      transform: translateX(0px);
     }
+    .box-2 {
+      transform: translateX(5000px);
+    }
+
     .intro {
       background-color: white;
       height: 100vh;
@@ -47,17 +49,13 @@
     }
     .text-container {
       color: black;
-      position: absolute;
       text-align: center;
       width: 80%;
-      left: 10%;
-      top: 40%;
       transform: scale(1.4);
     }
     .top, .bottom {
       overflow: hidden;
       line-height: 50px;
-
     }
     .top-text {
       display: inline-block;
@@ -119,7 +117,6 @@
 
       }
       .text {
-        margin-top: 40%;
         font-size: 20px;
 
       }
@@ -131,9 +128,201 @@
           transform: scale(2);
         }
       }
-    #box1 {
-      color: green;
+
+      /* SLIDE 0 STYLES */
+      .slide0 {
+        width: 50vw;
+        height: 100%;
+      }
+      .slide-0-textbox {
+        text-align: center;
+        position: relative;
+        top: 15%;
+      }
+      .slide-0-textbox .large-text {
+        font-size: 40px;
+        white-space: pre-wrap;
+      }
+
+
+    .stickman {
+      height: 3em;
+      width: 1.5em;
+      position: relative;
+      top: 12.5%;
+      left: 50%;
+      margin-left: -0.75em;
+      animation: 0.5s walk-body ease-in infinite;
     }
+    .stickman .head {
+      height: 0.75em;
+      width: 0.75em;
+      position: absolute;
+      top: 0;
+      left: 25%;
+      background-color: #fff;
+      border-radius: 100%;
+    }
+    .stickman .head .eye {
+      height: 0.09375em;
+      width: 0.09375em;
+      position: absolute;
+      top: 32.5%;
+      right: 25%;
+      background: #fff;
+      border-radius: 100%;
+    }
+    .stickman .head .mouth {
+      height: 0.04688em;
+      width: 0.21429em;
+      position: absolute;
+      bottom: 25%;
+      right: 0;
+      transform: rotate(11.25deg);
+      background-color: #fff;
+    }
+    .stickman .body {
+      height: 1em;
+      width: 0.09375em;
+      position: absolute;
+      top: 0.75em;
+      left: 50%;
+      margin-left: -0.04688em;
+      background-color: #fff;
+    }
+    .stickman .body .arm {
+      height: 0.75em;
+      width: 0.09375em;
+      position: absolute;
+      top: 10%;
+      transform: rotate(-45deg);
+      transform-origin: top;
+      background: #fff;
+      animation: 1s walk-arm infinite;
+    }
+    .stickman .body .arm#left {
+      animation-delay: 0.5s;
+      background: #fff;
+    }
+    .stickman .body .arm#left::after {
+      animation-delay: 0.5s;
+      background: #fff;
+    }
+    .stickman .body .arm::after {
+      content: "";
+      height: 0.5em;
+      width: 0.09375em;
+      position: absolute;
+      bottom: 0;
+      transform: rotate(90deg);
+      transform-origin: right bottom;
+      background: #fff;
+      animation: 1s walk-arm-after infinite;
+    }
+    .stickman .body .leg {
+      height: 0.625em;
+      width: 0.09375em;
+      position: absolute;
+      bottom: -0.625em;
+      transform: rotate(-90deg);
+      transform-origin: top;
+      background: #fff;
+      animation: 1s walk-leg infinite;
+    }
+    .stickman .body .leg#right {
+      background: #fff;
+      animation-delay: 0.5s;
+    }
+    .stickman .body .leg#right::after {
+      background: #fff;
+      animation-delay: 0.5s;
+    }
+    .stickman .body .leg::after {
+      content: "";
+      height: 0.625em;
+      width: 0.09375em;
+      position: absolute;
+      bottom: -0.625em;
+      transform: rotate(112.5deg);
+      transform-origin: top;
+      background: #fff;
+      animation: 1s walk-leg-after infinite;
+    }
+    @keyframes walk-body {
+      0% {
+        margin-top: -1.6875em;
+        padding-bottom: 0.1875em;
+      }
+      50% {
+        margin-top: -1.5em;
+        padding-bottom: 0;
+      }
+      100% {
+        margin-top: -1.6875em;
+        padding-bottom: 0.1875em;
+      }
+    }
+    @keyframes walk-arm {
+      0% {
+        transform: rotate(-45deg);
+      }
+      50% {
+        transform: rotate(45deg);
+      }
+      100% {
+        transform: rotate(-45deg);
+      }
+    }
+    @keyframes walk-arm-after {
+      0% {
+        transform: rotate(67.5deg);
+      }
+      50% {
+        transform: rotate(90deg);
+      }
+      100% {
+        transform: rotate(67.5deg);
+      }
+    }
+    @keyframes walk-leg {
+      0% {
+        transform: rotate(-90deg);
+      }
+      50% {
+        transform: rotate(45deg);
+      }
+      100% {
+        transform: rotate(-90deg);
+      }
+    }
+    @keyframes walk-leg-after {
+      0% {
+        transform: rotate(112.5deg);
+      }
+      25% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(55deg);
+      }
+      100% {
+        transform: rotate(112.5deg);
+      }
+    }
+    .circle {
+      border: 0.1em solid white;
+      width: 20em;
+      height: 20em;
+      border-radius: 50%;
+      position: relative;
+      top: 12.5%;
+      left: 50%;
+      margin-left: -10em;
+    }
+
+
+
+
   </style>
 </head>
 <body>
@@ -152,25 +341,34 @@
 
   <div id="topnav">
   </div>
-  <div id="root">
-    <div class="box" id = "box0">
-      <div class = "text"><br>This site is currently under construction</div>
-      <br>
-      Exploring the Earth & the Cosmos
-      <!--<video width="320" height="240" loop autoplay class = "sun_video">
-        <source src="sun_video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>-->
+  <div class="container">
+    <div class="box-1">
+      <div class="slide0">
+        <div class="stickman">
+          <div class="head"></div>
+          <div class="body">
+            <div class="arm" id="left"></div>
+            <div class="arm" id="right"></div>
+            <div class="leg" id="left"></div>
+            <div class="leg" id="right"></div>
+          </div>
+        </div>
+        <div class="circle"></div>
+
+        <div class="slide-0-textbox">
+          <div class = "large-text">Exploring the Earth & the Cosmos</div>
+          <div class = "text">This site is currently under construction</div>
+        </div>
+
+
+      </div>
+
     </div>
-    <div class="box" id = "box1"></div>
-    <div class="box" id = "box2">2</div>
-    <div class="box" id = "box3">3</div>
-    <div class="box" id = "box4">4</div>
-    <div class="box" id = "box5">5</div>
-    <div class="box" id = "box6">6</div>
-    <div class="box" id = "box7">7</div>
-    <div class="box" id = "box7">8</div>
-    <div class="box" id = "box7">9</div>
+    <div class="box-2">
+
+
+    </div>
+
   </div>
   <script type="text/javascript">
     var delay = 5000;
@@ -180,32 +378,60 @@
 
     }, delay)
 
-
-    var colors = ["540D6E","EE4266","FFD23F","3BCEAC","0EAD69"];
-    var root = document.getElementById("root");
-    /*
-    for(let i = 0; i < 10; i++) {
-      var box = document.createElement("div");
-      box.className = "box";
-      box.innerText = i;
-      box.style.backgroundColor = "#" + colors[i%5];
-      root.appendChild(box);
-    }*/
+       const scrollFactor = 0.3; //sets scroll speed
 
 
-    var len = root.childElementCount;
-    console.log(root.childNodes);
+       //event listener to scroll on mouse wheel or laptop equivalent
+     window.addEventListener("wheel", function(e) {
 
-    root.insertBefore(root.lastElementChild, root.firstElementChild);
-    root.scrollTop = root.firstElementChild.clientWidth;
+       var target = e.deltaY*scrollFactor;
+       var container = document.querySelector(".container")
+       var box1 = container.firstElementChild;
+       var box2 = container.lastElementChild;
 
-    root.onscroll = function(e) {
-      if(root.scrollTop < screen.width) {
-          root.insertBefore(root.lastChild, root.firstChild);
-      } else if(root.scrollTop + root.clientHeight > root.scrollHeight - screen.width) {
-          root.appendChild(root.firstChild);
-      }
-    }
+       var trans1 = box1.style.transform;
+       var trans2 = box2.style.transform;
+       var currX1 = parseFloat(trans1.substring(trans1.indexOf("(")+1, trans1.indexOf("px"))) || parseFloat(window.getComputedStyle(document.querySelector(".box-1")).transform.split(",")[4]);
+       var currX2 = parseFloat(trans2.substring(trans2.indexOf("(")+1, trans2.indexOf("px"))) || parseFloat(window.getComputedStyle(document.querySelector(".box-2")).transform.split(",")[4]);
+
+       box1.style.transform = "translateX("+(currX1+target)+"px)";
+       box2.style.transform = "translateX("+(currX2+target)+"px)";
+
+         if((currX1 + target)<-box1.clientWidth/2) {
+           //in the second half of box 1
+           //move box 2 to the right side of box 1
+
+           if(box1.getBoundingClientRect().left > box2.getBoundingClientRect().left) {
+             box2.style.transform = "translateX("+(box1.getBoundingClientRect().left+box1.clientWidth)+"px)";
+             return;
+           }
+         } else {
+           //in the first half of box 1
+           if(box1.getBoundingClientRect().left < box2.getBoundingClientRect().left) {
+             box2.style.transform = "translateX("+(-box1.clientWidth+box1.getBoundingClientRect().left)+"px)";
+             return;
+           }
+         }
+         if((currX2 + target)<-box2.clientWidth/2) {
+           //in the second half of box 2
+           if(box1.getBoundingClientRect().left < box2.getBoundingClientRect().left) {
+             box1.style.transform = "translateX("+(box2.getBoundingClientRect().left+box2.clientWidth)+"px)";
+             return;
+           }
+         } else {
+           //in the first half of box 2
+           if(box1.getBoundingClientRect().left > box2.getBoundingClientRect().left) {
+             box1.style.transform = "translateX("+(box2.getBoundingClientRect().left-box1.clientWidth)+"px)";
+             console.log(box1.style.transform);
+             return;
+           }
+         }
+
+
+
+     });
+
+
 
 
   </script>
