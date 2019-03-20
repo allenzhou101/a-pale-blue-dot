@@ -53,9 +53,10 @@ function toSite() {
 }
 function toNormal() {
   document.querySelector('.main-text').style.transform = "translateY(0px)";
+//  document.querySelector('.skip-text').style.transform = "translateY(0px)";
+
   document.querySelector('.continue-text').style = "transform: translateY(0px);";
-  document.querySelector('.skip-text').style.transform = "translateY(0px)";
-  document.querySelector('.main-text-circle').style = "transform: translateY(0px) scale(1); ";
+  document.querySelector('.main-text-circle').style = "transform: translateY(0px) scale(1); opacity: 1;";
   document.querySelector('#circle').style = "  animation-name: fade; animation-duration: 1s; animation-iteration-count: 1; animation-fill-mode: forwards;";
 
 }
@@ -113,6 +114,10 @@ function timer() {
     item.dispatchEvent(pressHoldEvent);
     //document.location.href = "home.html";
     secondEvent();
+    document.body.removeEventListener("mouseup", toNormal);
+    //document.body.style.transform = "scale(1000)";
+    document.querySelector('.main-text-circle').style = "border: 4px white;";
+    //document.body.style = "pointer-events: none;";
 
   }
 }
@@ -218,25 +223,29 @@ setTimeout(function() {
 <script>
 function secondEvent() {
   //document.body.style = "transform: scale(1.3); transition: 2s; transform-origin: left;";
- document.body.style = "transform: scale(2.6); pointer-events: none !important;";
  document.querySelector('.main-text').style.transform = "translateY(-50px)";
  //document.querySelector('.skip-text').style.transform = "translateY(-20px)";
- document.querySelector('.main-text-circle').style = " opacity: 0;";
+ document.querySelector('.main-text-circle').style = "border: solid 4px white;";
  document.querySelector('.main-text').innerHTML = "";
- document.querySelector('.outer2').style.display = "none";
+ //document.querySelector('.particle-background').style.visibility = "hidden !important";
+ document.querySelector('.continue-text').innerHTML = "";
 
- document.body.style = " background-color: white;";
+ document.body.style = "pointer-events: none; background-color: white;";
 var delay1 = 800;
 setTimeout(function(){
-  document.location.href = "home.html";
+  document.body.style = "pointer-events: none; background-color: white;";
+  document.querySelector('.main-text-circle').style = "border: solid 4px white;";
 
-document.body.style = "transform: scale(2.8); background-color: white; pointer-events: none;";
+  document.location.href = "home.html";
+//  document.querySelector('.main-text-circle').style = " display: none !important;";
 /*document.querySelector('.main-text').innerHTML = "You're alive right this second.";
 document.querySelector('.main-text').style = "transform: translateY(0); color: black;";*/
-document.querySelector('.main-text2').innerHTML = "You're alive right this second.";
-document.querySelector('.main-text2').style = "transform: translateY(0); color: black;";
-}, delay1);
+//document.body.style = "transform: scale(2.8); background-color: white; pointer-events: none;";
+//document.querySelector('.main-text2').innerHTML = "You're alive right this second.";
+//document.querySelector('.main-text2').style = "transform: translateY(0); color: black;";
+}, delay1);/*
 setTimeout(function(){
+
 document.body.style.transform = "scale(1.4)";
 document.querySelector('.main-text').style.transform = "translateY(-60px)";
 }, delay1 + 1000);
@@ -248,10 +257,10 @@ setTimeout(function(){
 //document.querySelector('.second-continue').style = " visibility: visible;";
 }, delay1 + 2000);
 setTimeout(function(){
-fourthEvent();
+//fourthEvent();
 //document.querySelector('.second-continue').style = "pointer-events: all; transform: translateY(0);";
 }, delay1 + 3000);
-}
+}*/
 /*
 var delay4 = 10000;
 setTimeout(function(){
@@ -261,8 +270,8 @@ var delay5 = 15000;
 setTimeout(function(){
 document.querySelector('.main-text').innerHTML = "That's an amazing thing!";
 document.querySelector('.main-text').style.transform = "translateY(0px)";
-}, delay5);
-}*/
+}, delay5);*/
+}
 
 // The item (or items) to press and hold on
 

@@ -9,8 +9,7 @@
   <style>
     body {
       margin: 0;
-      overflow-x: hidden;
-      overflow-y: hidden;
+      overflow: hidden;
       height: 100vh;
       background-color: #4A4E4A;
       font-family: 'Space Mono', monospace;
@@ -26,10 +25,19 @@
       height: 100vh;
       display: inline-block;
       position: fixed;
-      top: 0;
+      top: 100vh;
       left: 0;
       bottom: 0;
       background-color: black;
+      animation-name: fadeInInfinite;
+      animation-duration: 1s;
+      animation-delay: 4s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeInInfinite {
+      100% {
+        top: 0;
+      }
     }
     .box-1 {
       transform: translateX(0px);
@@ -52,6 +60,8 @@
       text-align: center;
       width: 80%;
       transform: scale(1.4);
+      padding: 30vh 0 0 10%;
+
     }
     .top, .bottom {
       overflow: hidden;
@@ -337,7 +347,6 @@
       </div>
     </div>
   </div>
-
 
   <div id="topnav">
   </div>
