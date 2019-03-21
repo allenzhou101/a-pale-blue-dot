@@ -4,336 +4,10 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-
+  <link href = "main2.css" rel = "stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <title>A Pale Blue Dot</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      height: 100vh;
-      background-color: #4A4E4A;
-      font-family: 'Space Mono', monospace;
-      color: white;
-      box-sizing: border-box;
-    }
-    .container {
-      height: 100vh;
-      white-space: nowrap;
-    }
-    .box-1, .box-2 {
-      width: 5000px;
-      height: 100vh;
-      display: inline-block;
-      position: fixed;
-      top: 100vh;
-      left: 0;
-      bottom: 0;
-      background-color: black;
-      animation-name: fadeInInfinite;
-      animation-duration: 1s;
-      animation-delay: 4s;
-      animation-fill-mode: forwards;
-    }
-    @keyframes fadeInInfinite {
-      100% {
-        top: 0;
-      }
-    }
-    .box-1 {
-      transform: translateX(0px);
-    }
-    .box-2 {
-      transform: translateX(5000px);
-    }
-
-    .intro {
-      background-color: white;
-      height: 100vh;
-      width: 100%;
-      animation-name: fadeIn;
-      animation-duration: 1s;
-      animation-delay: 4s;
-      animation-fill-mode: forwards;
-    }
-    .text-container {
-      color: black;
-      text-align: center;
-      width: 80%;
-      transform: scale(1.4);
-      padding: 30vh 0 0 10%;
-
-    }
-    .top, .bottom {
-      overflow: hidden;
-      line-height: 50px;
-    }
-    .top-text {
-      display: inline-block;
-      font-size: 20px;
-      transform: translateY(-60px);
-      animation-name: textIn;
-      animation-duration: 2s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-    }
-    .bottom-text {
-      display: inline-block;
-      font-size: 40px;
-      transform: translateY(-60px);
-      animation-name: textIn;
-      animation-duration: 2s;
-      animation-delay: 2s;
-      animation-fill-mode: forwards;
-    }
-    .o {
-      font-size: 20px;
-      animation: textIn 2s forwards;
-      display: inline-block;
-    }
-    .o2 {
-      font-size: 40px;
-      animation: textIn 2s forwards;
-      display: inline-block;
-    }
-
-    @keyframes textIn {
-        0% {
-          transform: translateY(-60px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-    }
-    @keyframes fadeIn {
-      0% {
-        filter: brightness(100%);
-        height: 100vh;
-      }
-      100% {
-        filter: brightness(50%);
-        height: 0vh;
-      }
-    }
-    #box0 {
-      color: white;
-    }
-      .sun_video {
-        margin-top: 40%;
-        transition: 1s;
-        transform: scale(1);
-      }
-      .sun_video:hover {
-        transform: scale(1.2);
-
-      }
-      .text {
-        font-size: 20px;
-
-      }
-      @keyframes sunPulse {
-        0% {
-          transform: scale(1);
-        }
-        100% {
-          transform: scale(2);
-        }
-      }
-
-      /* SLIDE 0 STYLES */
-      .slide0 {
-        width: 50vw;
-        height: 100%;
-      }
-      .slide-0-textbox {
-        text-align: center;
-        position: relative;
-        top: 15%;
-      }
-      .slide-0-textbox .large-text {
-        font-size: 40px;
-        white-space: pre-wrap;
-      }
-
-
-    .stickman {
-      height: 3em;
-      width: 1.5em;
-      position: relative;
-      top: 12.5%;
-      left: 50%;
-      margin-left: -0.75em;
-      animation: 0.5s walk-body ease-in infinite;
-    }
-    .stickman .head {
-      height: 0.75em;
-      width: 0.75em;
-      position: absolute;
-      top: 0;
-      left: 25%;
-      background-color: #fff;
-      border-radius: 100%;
-    }
-    .stickman .head .eye {
-      height: 0.09375em;
-      width: 0.09375em;
-      position: absolute;
-      top: 32.5%;
-      right: 25%;
-      background: #fff;
-      border-radius: 100%;
-    }
-    .stickman .head .mouth {
-      height: 0.04688em;
-      width: 0.21429em;
-      position: absolute;
-      bottom: 25%;
-      right: 0;
-      transform: rotate(11.25deg);
-      background-color: #fff;
-    }
-    .stickman .body {
-      height: 1em;
-      width: 0.09375em;
-      position: absolute;
-      top: 0.75em;
-      left: 50%;
-      margin-left: -0.04688em;
-      background-color: #fff;
-    }
-    .stickman .body .arm {
-      height: 0.75em;
-      width: 0.09375em;
-      position: absolute;
-      top: 10%;
-      transform: rotate(-45deg);
-      transform-origin: top;
-      background: #fff;
-      animation: 1s walk-arm infinite;
-    }
-    .stickman .body .arm#left {
-      animation-delay: 0.5s;
-      background: #fff;
-    }
-    .stickman .body .arm#left::after {
-      animation-delay: 0.5s;
-      background: #fff;
-    }
-    .stickman .body .arm::after {
-      content: "";
-      height: 0.5em;
-      width: 0.09375em;
-      position: absolute;
-      bottom: 0;
-      transform: rotate(90deg);
-      transform-origin: right bottom;
-      background: #fff;
-      animation: 1s walk-arm-after infinite;
-    }
-    .stickman .body .leg {
-      height: 0.625em;
-      width: 0.09375em;
-      position: absolute;
-      bottom: -0.625em;
-      transform: rotate(-90deg);
-      transform-origin: top;
-      background: #fff;
-      animation: 1s walk-leg infinite;
-    }
-    .stickman .body .leg#right {
-      background: #fff;
-      animation-delay: 0.5s;
-    }
-    .stickman .body .leg#right::after {
-      background: #fff;
-      animation-delay: 0.5s;
-    }
-    .stickman .body .leg::after {
-      content: "";
-      height: 0.625em;
-      width: 0.09375em;
-      position: absolute;
-      bottom: -0.625em;
-      transform: rotate(112.5deg);
-      transform-origin: top;
-      background: #fff;
-      animation: 1s walk-leg-after infinite;
-    }
-    @keyframes walk-body {
-      0% {
-        margin-top: -1.6875em;
-        padding-bottom: 0.1875em;
-      }
-      50% {
-        margin-top: -1.5em;
-        padding-bottom: 0;
-      }
-      100% {
-        margin-top: -1.6875em;
-        padding-bottom: 0.1875em;
-      }
-    }
-    @keyframes walk-arm {
-      0% {
-        transform: rotate(-45deg);
-      }
-      50% {
-        transform: rotate(45deg);
-      }
-      100% {
-        transform: rotate(-45deg);
-      }
-    }
-    @keyframes walk-arm-after {
-      0% {
-        transform: rotate(67.5deg);
-      }
-      50% {
-        transform: rotate(90deg);
-      }
-      100% {
-        transform: rotate(67.5deg);
-      }
-    }
-    @keyframes walk-leg {
-      0% {
-        transform: rotate(-90deg);
-      }
-      50% {
-        transform: rotate(45deg);
-      }
-      100% {
-        transform: rotate(-90deg);
-      }
-    }
-    @keyframes walk-leg-after {
-      0% {
-        transform: rotate(112.5deg);
-      }
-      25% {
-        transform: rotate(0deg);
-      }
-      50% {
-        transform: rotate(55deg);
-      }
-      100% {
-        transform: rotate(112.5deg);
-      }
-    }
-    .circle {
-      border: 0.1em solid white;
-      width: 20em;
-      height: 20em;
-      border-radius: 50%;
-      position: relative;
-      top: 12.5%;
-      left: 50%;
-      margin-left: -10em;
-    }
-
-
-
-
-  </style>
 </head>
 <body>
   <div class = "intro">
@@ -370,6 +44,52 @@
         </div>
 
 
+      </div>
+      <div class = "slide1">
+        <div class = "pale-text">
+          WHAT IS
+        </div>
+        <div class = "pale-text-rotated">
+          A PALE BLUE DOT?
+        </div>
+        <div class = "para1">
+          It has been said that astronomy
+          is a humbling and character-building experience. There is
+          perhaps no better demonstration of the folly of human conceits
+          than this distant image of our tiny world. To me, it underscores
+          our responsibility to deal more kindly with one another, and to
+          preserve and cherish the pale blue dot, the only home we've ever known.
+        </div>
+
+        <div class = "para2">
+          This image of Earth is one of 60 frames taken by the Voyager 1
+          spacecraft on February 14, 1990 from a distance of more than 6
+          billion kilometers (4 billion miles) and about 32 degrees above
+          the ecliptic plane. In the image the Earth is a mere point of
+          light, a crescent only 0.12 pixel in size. Our planet was caught
+          in the center of one of the scattered light rays resulting from
+          taking the image so close to the Sun. This image is part of
+          Voyager 1's final photographic assignment which captured
+          family portraits of the Sun and planets.
+        </div>
+        <div class = "sagan-speech">
+          LISTEN TO
+        </div>
+        <div class="wrapper">
+           <a href="#" title="Listen to the song" class="player-controls">
+              <span class="audio-label">
+                 <span>
+                   Sagan's
+                    <small> Speech</small>
+                 </span>
+              </span>
+              <span class="play"></span>
+              <span class="pause"></span>
+           </a>
+           <audio id="player">
+              <source src="carl-sagan-speech.mp3" type="audio/mp3">
+           </audio>
+        </div>
       </div>
 
     </div>
@@ -440,7 +160,86 @@
 
      });
 
+     var getaudio = $('#player')[0],
+          mouseovertimer,
+          audiostatus = 'off',
+          playerControls = ".player-controls";
 
+     $(document).on('mouseenter', playerControls, function() {
+
+        if (!mouseovertimer) {
+
+           mouseovertimer = window.setTimeout(function() {
+
+              mouseovertimer = null;
+
+              if (!$(playerControls).hasClass("playing")) {
+
+                 getaudio.load();
+                 getaudio.play();
+                 $(playerControls).addClass('playing');
+                 return false;
+
+              }
+
+           }, 2500);
+
+        }
+
+     });
+
+     $(document).on('mouseleave', playerControls, function() {
+
+        if (mouseovertimer) {
+
+           window.clearTimeout(mouseovertimer);
+           mouseovertimer = null;
+
+        }
+
+     });
+
+     $(document).on('click touch', playerControls, function(e) {
+
+        e.preventDefault();
+
+        if (!$(playerControls).hasClass("playing")) {
+
+           if (audiostatus == 'off') {
+
+              $(playerControls).addClass('playing');
+              getaudio.load();
+              getaudio.play();
+              window.clearTimeout(mouseovertimer);
+              audiostatus = 'on';
+              return false;
+
+           } else if (audiostatus == 'on') {
+
+              $(playerControls).addClass('playing');
+              getaudio.play();
+
+           }
+
+        } else if ($(playerControls).hasClass("playing")) {
+
+           getaudio.pause();
+           $(playerControls).removeClass('playing');
+           window.clearTimeout(mouseovertimer);
+           audiostatus = 'on';
+
+        }
+
+        return false;
+
+     });
+
+     $('#player').on('ended', function() {
+
+        $(playerControls).removeClass('playing');
+        audiostatus = 'off';
+
+     });
 
 
   </script>

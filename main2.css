@@ -1,0 +1,473 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background-color: black;
+    font-family: 'Space Mono', monospace;
+    color: white;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .intro {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    animation-name: fadeIn;
+    animation-duration: 0s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+  }
+                              .text-container {
+                                color: black;
+                                text-align: center;
+                                width: 80%;
+                                transform: scale(1.4);
+                                padding: 30vh 0 0 10%;
+
+                              }
+                              .top, .bottom {
+                                overflow: hidden;
+                                line-height: 50px;
+                              }
+                              .top-text {
+                                display: inline-block;
+                                font-size: 20px;
+                                transform: translateY(-60px);
+                                animation-name: textIn;
+                                animation-duration: 2s;
+                                animation-delay: 1s;
+                                animation-fill-mode: forwards;
+                              }
+                              .bottom-text {
+                                display: inline-block;
+                                font-size: 40px;
+                                transform: translateY(-60px);
+                                animation-name: textIn;
+                                animation-duration: 2s;
+                                animation-delay: 2s;
+                                animation-fill-mode: forwards;
+                              }
+                              .o {
+                                font-size: 20px;
+                                animation: textIn 2s forwards;
+                                display: inline-block;
+                              }
+                              .o2 {
+                                font-size: 40px;
+                                animation: textIn 2s forwards;
+                                display: inline-block;
+                              }
+
+                              @keyframes textIn {
+                                  0% {
+                                    transform: translateY(-60px);
+                                  }
+                                  100% {
+                                    transform: translateY(0px);
+                                  }
+                              }
+                              @keyframes fadeIn {
+                                0% {
+                                  filter: brightness(100%);
+                                  height: 100vh;
+                                }
+                                100% {
+                                  filter: brightness(50%);
+                                  height: 0vh;
+                                }
+                              }
+  .container {
+    height: 100vh;
+    white-space: nowrap;
+  }
+  .box-1, .box-2 {
+    width: 5000px;
+    height: 96vh;
+    display: inline-block;
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    animation-name: fadeInInfinite;
+    animation-duration: 0s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeInInfinite {
+    100% {
+      top: 2vh;
+    }
+  }
+  .box-1 {
+    transform: translateX(0px);
+  }
+  .box-2 {
+    transform: translateX(5000px);
+  }
+    /* SLIDE 0 STYLES */
+    .slide0 {
+      width: 500px;
+      height: 100%;
+      border-left: 2px solid white;
+      border-right: 2px solid white;
+      padding-left: 2vw;
+      overflow: hidden;
+      display: inline-block;
+    }
+                  .slide-0-textbox {
+                    text-align: center;
+                    position: relative;
+                    top: 15%;
+                  }
+                  .slide-0-textbox .large-text {
+                    font-size: 40px;
+                    white-space: pre-wrap;
+                  }
+                .stickman {
+                  height: 3em;
+                  width: 1.5em;
+                  position: relative;
+                  top: 12.5%;
+                  left: 50%;
+                  margin-left: -0.75em;
+                  animation: 0.5s walk-body ease-in infinite;
+                }
+                .stickman .head {
+                  height: 0.75em;
+                  width: 0.75em;
+                  position: absolute;
+                  top: 0;
+                  left: 25%;
+                  background-color: #fff;
+                  border-radius: 100%;
+                }
+                .stickman .head .eye {
+                  height: 0.09375em;
+                  width: 0.09375em;
+                  position: absolute;
+                  top: 32.5%;
+                  right: 25%;
+                  background: #fff;
+                  border-radius: 100%;
+                }
+                .stickman .head .mouth {
+                  height: 0.04688em;
+                  width: 0.21429em;
+                  position: absolute;
+                  bottom: 25%;
+                  right: 0;
+                  transform: rotate(11.25deg);
+                  background-color: #fff;
+                }
+                .stickman .body {
+                  height: 1em;
+                  width: 0.09375em;
+                  position: absolute;
+                  top: 0.75em;
+                  left: 50%;
+                  margin-left: -0.04688em;
+                  background-color: #fff;
+                }
+                .stickman .body .arm {
+                  height: 0.75em;
+                  width: 0.09375em;
+                  position: absolute;
+                  top: 10%;
+                  transform: rotate(-45deg);
+                  transform-origin: top;
+                  background: #fff;
+                  animation: 1s walk-arm infinite;
+                }
+                .stickman .body .arm#left {
+                  animation-delay: 0.5s;
+                  background: #fff;
+                }
+                .stickman .body .arm#left::after {
+                  animation-delay: 0.5s;
+                  background: #fff;
+                }
+                .stickman .body .arm::after {
+                  content: "";
+                  height: 0.5em;
+                  width: 0.09375em;
+                  position: absolute;
+                  bottom: 0;
+                  transform: rotate(90deg);
+                  transform-origin: right bottom;
+                  background: #fff;
+                  animation: 1s walk-arm-after infinite;
+                }
+                .stickman .body .leg {
+                  height: 0.625em;
+                  width: 0.09375em;
+                  position: absolute;
+                  bottom: -0.625em;
+                  transform: rotate(-90deg);
+                  transform-origin: top;
+                  background: #fff;
+                  animation: 1s walk-leg infinite;
+                }
+                .stickman .body .leg#right {
+                  background: #fff;
+                  animation-delay: 0.5s;
+                }
+                .stickman .body .leg#right::after {
+                  background: #fff;
+                  animation-delay: 0.5s;
+                }
+                .stickman .body .leg::after {
+                  content: "";
+                  height: 0.625em;
+                  width: 0.09375em;
+                  position: absolute;
+                  bottom: -0.625em;
+                  transform: rotate(112.5deg);
+                  transform-origin: top;
+                  background: #fff;
+                  animation: 1s walk-leg-after infinite;
+                }
+                @keyframes walk-body {
+                  0% {
+                    margin-top: -1.6875em;
+                    padding-bottom: 0.1875em;
+                  }
+                  50% {
+                    margin-top: -1.5em;
+                    padding-bottom: 0;
+                  }
+                  100% {
+                    margin-top: -1.6875em;
+                    padding-bottom: 0.1875em;
+                  }
+                }
+                @keyframes walk-arm {
+                  0% {
+                    transform: rotate(-45deg);
+                  }
+                  50% {
+                    transform: rotate(45deg);
+                  }
+                  100% {
+                    transform: rotate(-45deg);
+                  }
+                }
+                @keyframes walk-arm-after {
+                  0% {
+                    transform: rotate(67.5deg);
+                  }
+                  50% {
+                    transform: rotate(90deg);
+                  }
+                  100% {
+                    transform: rotate(67.5deg);
+                  }
+                }
+                @keyframes walk-leg {
+                  0% {
+                    transform: rotate(-90deg);
+                  }
+                  50% {
+                    transform: rotate(45deg);
+                  }
+                  100% {
+                    transform: rotate(-90deg);
+                  }
+                }
+                @keyframes walk-leg-after {
+                  0% {
+                    transform: rotate(112.5deg);
+                  }
+                  25% {
+                    transform: rotate(0deg);
+                  }
+                  50% {
+                    transform: rotate(55deg);
+                  }
+                  100% {
+                    transform: rotate(112.5deg);
+                  }
+                }
+                .circle {
+                  border: 0.1em solid white;
+                  width: 20em;
+                  height: 20em;
+                  border-radius: 50%;
+                  position: relative;
+                  top: 12.5%;
+                  left: 50%;
+                  margin-left: -10em;
+                }
+.slide1 {
+  width: 1000px;
+  height: 100%;
+  padding-left: 2vw;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid white;
+}
+                          .pale-text {
+                            font-size: 15vh;
+                          }
+                          .pale-text-rotated {
+                            transform: rotate(90deg);
+                            transform-origin: bottom left;
+                            font-size: 6vh;
+                          }
+                          .para1 {
+                            margin: -50px 50px 0 400px;
+                            font-size: 10px;
+                            width: 400px;
+                          }
+                          .para2 {
+                            margin-left: 100px;
+                            width: 300px;
+                            font-size: 10px;
+                            display: inline-block;
+                          }
+                          .sagan-speech {
+                              display: inline-block;
+                              text-align: right;
+                              width: 100%;
+                              margin-top: 100px;
+                              transform: rotate(90deg) translateY(40px);
+                              transform-origin: right;
+                              font-size: 40px;
+                          }
+                          .wrapper {
+                            display: block;
+                            margin: -10px 0 0 900px;
+                         }
+                          .player-controls {
+                         	 color: #FFF;
+                         	 cursor: pointer;
+                         	 display: block;
+                         	 font-size: 40px;
+                         	 height: 1em;
+                         	 position: relative;
+                         	 text-decoration: none;
+                         	 width: 1em;
+                         	 -webkit-transition: transform 0.25s ease-in-out;
+                         	 transition: transform 0.25s ease-in-out;
+                         }
+                          .player-controls .audio-label {
+                         	 line-height: 1;
+                         	 position: absolute;
+                         	 right: 1.35em;
+                         	 text-align: right;
+                         	 text-transform: uppercase;
+                         	 top: -0.4em;
+                         }
+                          .player-controls .audio-label span {
+                         	 font-size: 18px;
+                         }
+                          .player-controls .audio-label span small {
+                         	 display: block;
+                         	 font-size: 0.83em;
+                         }
+                          .player-controls .play, .player-controls .pause {
+                         	 display: block;
+                         	 background: url('http://thiagovieira.com/images/play.svg') no-repeat 0 0;
+                         	 background-size: 100% 100%;
+                         	 height: 1em;
+                         	 position: absolute;
+                         	 width: 1em;
+                         	 -webkit-transition: all 0.25s linear;
+                         	 transition: all 0.25s linear;
+                         	 z-index: 5;
+                         }
+                          .player-controls .play::before, .player-controls .play::after, .player-controls .pause::before, .player-controls .pause::after {
+                         	 -webkit-border-radius: 1000px;
+                         	 -moz-border-radius: 1000px;
+                         	 border-radius: 1000px;
+                         	 content: "";
+                         	 display: block;
+                         	 position: absolute;
+                         	 height: 1em;
+                         	 right: 0;
+                         	 top: 0;
+                         	 width: 1em;
+                         	 z-index: 0;
+                         }
+                          .player-controls .play::before {
+                         	 box-shadow: 0 0 0 rgba(255,255,255,0);
+                         	 -webkit-transition: all 0.25s linear;
+                         	 transition: all 0.25s linear;
+                         }
+                          .player-controls .pause {
+                         	 background-image: url('http://thiagovieira.com/images/pause.svg');
+                         	 opacity: 0;
+                         	 right: 0;
+                         	 top: 0;
+                         }
+                          .player-controls.playing .play {
+                         	 opacity: 0;
+                         }
+                          .player-controls.playing .pause {
+                         	 opacity: 1;
+                         }
+                          .player-controls.playing .pause::before {
+                         	 -moz-animation: audio1 1.5s infinite ease-in-out;
+                         	 -o-animation: audio1 1.5s infinite ease-in-out;
+                         	 -webkit-animation: audio1 1.5s infinite ease-in-out;
+                         	 animation: audio1 1.5s infinite ease-in-out;
+                         }
+                          .player-controls.playing .pause::after {
+                         	 -moz-animation: audio2 2.2s infinite ease-in-out;
+                         	 -o-animation: audio2 2.2s infinite ease-in-out;
+                         	 -webkit-animation: audio2 2.2s infinite ease-in-out;
+                         	 animation: audio2 2.2s infinite ease-in-out;
+                         }
+                          .player-controls:hover {
+                         	 transform: scale(1.1);
+                         }
+                          .player-controls:hover .play::before {
+                         	 box-shadow: 0 0 12px rgba(255,238,125,0.8);
+                         }
+                          .animate-audio1 {
+                         	 -moz-animation: audio1 1.5s infinite ease-in-out;
+                         	 -o-animation: audio1 1.5s infinite ease-in-out;
+                         	 -webkit-animation: audio1 1.5s infinite ease-in-out;
+                         	 animation: audio1 1.5s infinite ease-in-out;
+                         }
+                          @keyframes audio1 {
+                         	 0%, 100% {
+                         		 box-shadow: 0 0 0 0.4em rgba(255,255,255,0.4);
+                         	}
+                         	 25% {
+                         		 box-shadow: 0 0 0 0.15em rgba(255,255,255,0.15);
+                         	}
+                         	 50% {
+                         		 box-shadow: 0 0 0 0.55em rgba(255,255,255,0.55);
+                         	}
+                         	 75% {
+                         		 box-shadow: 0 0 0 0.25em rgba(255,255,255,0.25);
+                         	}
+                         }
+                          .animate-audio2 {
+                         	 -moz-animation: audio2 2.2s infinite ease-in-out;
+                         	 -o-animation: audio2 2.2s infinite ease-in-out;
+                         	 -webkit-animation: audio2 2.2s infinite ease-in-out;
+                         	 animation: audio2 2.2s infinite ease-in-out;
+                         }
+                          @keyframes audio2 {
+                         	 0%, 100% {
+                         		 box-shadow: 0 0 0 0.25em rgba(255,255,255,0.15);
+                         	}
+                         	 25% {
+                         		 box-shadow: 0 0 0 0.4em rgba(255,255,255,0.3);
+                         	}
+                         	 50% {
+                         		 box-shadow: 0 0 0 0.15em rgba(255,255,255,0.05);
+                         	}
+                         	 75% {
+                         		 box-shadow: 0 0 0 0.55em rgba(255,255,255,0.45);
+                         	}
+                         }
+
+                          div {
+                            white-space: normal;
+                          }
