@@ -84,7 +84,7 @@ body {
     white-space: nowrap;
   }
   .box-1, .box-2 {
-    width: 5000px;
+    width: 421vh;
     height: 96vh;
     display: inline-block;
     position: fixed;
@@ -110,7 +110,7 @@ body {
   }
     /* SLIDE 0 STYLES */
     .slide0 {
-      width: 500px;
+      width: 600px;
       height: 100%;
       border-left: 2px solid white;
       border-right: 2px solid white;
@@ -302,7 +302,7 @@ body {
                   margin-left: -10em;
                 }
 .slide1 {
-  width: 1000px;
+  width: 900px;
   height: 100%;
   padding-left: 2vw;
   overflow: hidden;
@@ -328,18 +328,23 @@ body {
                             font-size: 10px;
                             display: inline-block;
                           }
+                          .pale-image {
+                            height: 150px;
+                            margin-left: 70px;
+                            margin-top: 50px;
+                          }
                           .sagan-speech {
                               display: inline-block;
                               text-align: right;
                               width: 100%;
-                              margin-top: 100px;
+                              margin-top: 30px;
                               transform: rotate(90deg) translateY(40px);
                               transform-origin: right;
                               font-size: 40px;
                           }
                           .wrapper {
                             display: block;
-                            margin: -10px 0 0 900px;
+                            margin: -10px 0 0 700px;
                          }
                           .player-controls {
                          	 color: #FFF;
@@ -471,3 +476,285 @@ body {
                           div {
                             white-space: normal;
                           }
+.slide2 {
+  width: 6vh;
+  height: 100%;
+  padding-left: 2vw;
+  overflow: hidden;
+  display: inline-block;
+}
+                            .text-wrapper-container {
+                              margin-left: 5vh;
+                              transform: rotate(90deg);
+                              transform-origin: top left;
+                              width: 96vh;
+                              height: 6vh;
+                              overflow: hidden;
+                              white-space: nowrap;
+
+                            }
+                              .text-wrapper {
+                                font-size: 4.28vh;
+                                animation: textMove 4s infinite linear;
+                                white-space: nowrap;
+                              }
+                              @keyframes textMove {
+                                100% {
+                                  transform: translateX(-139vh);
+                                }
+                              }
+
+    .slide3 {
+      width: 120vh;
+      height: 100%;
+      padding-left: 2vw;
+      overflow: hidden;
+      display: inline-block;
+      border-left: 2px solid white;
+      border-right: 2px solid white;
+    }
+                                                      .slide3-container {
+                                                        margin-top: 4vh;
+                                                        width: 100%;
+                                                        text-align: center;
+                                                      }
+                                                      .universe {
+                                                        font-size: 5vh;
+                                                      }
+                                                      .universe-image {
+                                                        transition: .5s;
+                                                      }
+                                                      .universe-image:hover {
+                                                        filter: sepia(100%);
+                                                      }
+    .slide4 {
+      width: 100vh;
+      height: 100%;
+      padding-left: 2vw;
+      overflow: hidden;
+      display: inline-block;
+      border-right: 2px solid white;
+    }
+                                                                    .outer {
+                                                                      font-size: 15px;
+                                                                    }
+                                                                    .alien {
+                                                                      cursor: pointer;
+                                                                      transition: .5s;
+                                                                    }
+                                                                    .alien:hover {
+                                                                      filter: sepia(50%);
+                                                                      transform: scale(1.5);
+                                                                    }
+                                                                    .slide4-container {
+                                                                      margin-left: 0%;
+                                                                      width: 100%;
+                                                                      height: 40vh;
+                                                                      text-align: center;
+                                                                      margin-top: 30vh;
+                                                                      overflow: hidden;
+                                                                      white-space: normal;
+                                                                    }
+                                                                    .box {
+                                                                      width: 20vh;
+                                                                      height: 10vh;
+                                                                      line-height: 10vh;
+                                                                      border-radius: 4px;
+                                                                      color: #c8cae0;
+                                                                      border: 1px solid #c8cae0;
+                                                                      cursor: pointer;
+                                                                      transition: .25s;
+                                                                      display: inline-block;
+
+                                                                    }
+                                                                    .box.a {
+                                                                      margin-right: 10vw;
+                                                                      margin-top: 5vh;
+                                                                    }
+                                                                    .box:hover {
+                                                                      box-shadow: 0 0 10px 5px green;
+                                                                      background-color: green;
+                                                                    }
+                                                                    .box.b {
+                                                                      margin-top: 5vh;
+                                                                    }
+    .slide5 {
+      width: 60vh;
+      height: 100%;
+      padding-left: 1.9vw;
+      padding-right: 2vw;
+      overflow: hidden;
+      display: inline-block;
+      border-right: 2px solid white;
+    }
+
+                                            .slide5-container {
+                                              font-size: 2.15vh;
+                                              margin-top: 2vh;
+                                              height: 96vh;
+
+                                            }
+                                            table {
+                                              display: inline-block;
+                                              width: 100%;
+                                              height: 96vh;
+                                              margin-left: 0vw;
+                                              animation: moveUp 7s linear infinite;
+                                            }
+                                            @keyframes moveUp {
+                                              100% {
+                                                transform: translateY(-98vh);
+                                              }
+                                            }
+                                            tr {
+                                              height: 19.2vh;
+                                              text-align: center;
+                                            }
+                                            td {
+                                            }
+                                            img#slide5 {
+                                              height: 15vh;
+                                              margin: -10vh 0 0 -15vh;
+                                              position: absolute;
+                                              z-index: -1;
+                                              visibility: hidden;
+                                              filter: brightness(80%);
+                                            }
+                                            .quote-name {
+                                              font-size: .8vw;
+                                              font-style: italic;
+                                            }
+.slide6 {
+  width: 120vh;
+  height: 100%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid white;
+}
+                        .climate-change-container {
+                          width: 100%;
+                          margin-top: 20vh;
+                        }
+                          .graph {
+                            width: 110vh;
+                            position: relative;
+                          }
+                          .graph-temp {
+                            width: 110vh;
+                            position: absolute;
+                            z-index: -1;
+                            opacity: 0;
+                            transition: .5s;
+                            transform: translateY(-10vh) translateX(-105vh);
+                          }
+                          .climate-change-text {
+                            font-size: 5vh;
+                            margin-top: 2vh;
+                            text-align: right;
+                          }
+                          .climate-change-text-small {
+                            font-size: 2vh;
+                          }
+                          .global-temps {
+                            display: inline-block;
+                            cursor: pointer;
+                            transition: .5s;
+                          }
+                          .global-temps:hover {
+                            color: gray;
+                          }
+.slide7 {
+  width: 140vh;
+  height: 100%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid white;
+}
+                                        .book-container {
+                                          width: 100%;
+                                          margin-left: 0%;
+                                          font-size: 7vh;
+                                          margin-top: 35vh;
+                                          text-align: center;
+                                        }
+                                        img#slide7 {
+                                          position: relative;
+                                          height: 20vh;
+                                          z-index: -4;
+                                        }
+                                        .astrophysics-for {
+                                          top: -41vh;
+                                          left: 10vw;
+                                          animation: move1 10s alternate infinite linear;
+
+                                        }
+                                        .sapiens {
+                                          top: 0;
+                                          left: 0;
+                                          animation: move2 10s alternate infinite linear;
+
+                                        }
+                                        .do-androids {
+                                          top: 10vh;
+                                          left: 40vw;
+                                          animation: move3 10s alternate infinite linear;
+
+                                        }
+                                        .the-elegant {
+                                          top: -45vh;
+                                          left: 35vw;
+                                          animation: move4 10s alternate infinite linear;
+
+                                        }
+                                        .fahrenheit-451 {
+                                          top: 10vh;
+                                          left: 5vw;
+                                          animation: move5 10s alternate infinite linear;
+                                        }
+                                        @keyframes move1 {
+                                          100% {
+                                            transform: translateY(20px) translateX(20px);
+                                          }
+                                        }
+                                        @keyframes move2 {
+                                          100% {
+                                            transform: translateY(-25px) translateX(-20px);
+                                          }
+                                        }
+                                        @keyframes move3 {
+                                          100% {
+                                            transform: translateY(15px) translateX(10px);
+                                          }
+                                        }
+                                        @keyframes move4 {
+                                          100% {
+                                            transform: translateY(25px) translateX(20px);
+                                          }
+                                        }
+                                        @keyframes move5 {
+                                          100% {
+                                            transform: translateY(22px) translateX(-20px);
+                                          }
+                                        }
+                                        @keyframes move6 {
+                                          100% {
+                                            transform: translateY(2px) translateX(20px);
+                                          }
+                                        }
+                                        .overall {
+                                          filter: grayscale(0%);
+                                        }
+
+.slide8 {
+  width: 60vh;
+  height: 100%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 2px solid white;
+}

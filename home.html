@@ -45,59 +45,223 @@
 
 
       </div>
-      <div class = "slide1">
-        <div class = "pale-text">
-          WHAT IS
-        </div>
-        <div class = "pale-text-rotated">
-          A PALE BLUE DOT?
-        </div>
-        <div class = "para1">
-          It has been said that astronomy
-          is a humbling and character-building experience. There is
-          perhaps no better demonstration of the folly of human conceits
-          than this distant image of our tiny world. To me, it underscores
-          our responsibility to deal more kindly with one another, and to
-          preserve and cherish the pale blue dot, the only home we've ever known.
-        </div>
+        <div class = "slide1">
+          <div class = "pale-text">
+            WHAT IS
+          </div>
+          <div class = "pale-text-rotated">
+            A PALE BLUE DOT?
+          </div>
+          <div class = "para1">
+            It has been said that astronomy
+            is a humbling and character-building experience. There is
+            perhaps no better demonstration of the folly of human conceits
+            than this distant image of our tiny world. To me, it underscores
+            our responsibility to deal more kindly with one another, and to
+            preserve and cherish the pale blue dot, the only home we've ever known.
+          </div>
 
-        <div class = "para2">
-          This image of Earth is one of 60 frames taken by the Voyager 1
-          spacecraft on February 14, 1990 from a distance of more than 6
-          billion kilometers (4 billion miles) and about 32 degrees above
-          the ecliptic plane. In the image the Earth is a mere point of
-          light, a crescent only 0.12 pixel in size. Our planet was caught
-          in the center of one of the scattered light rays resulting from
-          taking the image so close to the Sun. This image is part of
-          Voyager 1's final photographic assignment which captured
-          family portraits of the Sun and planets.
+          <div class = "para2">
+            This image of Earth is one of 60 frames taken by the Voyager 1
+            spacecraft on February 14, 1990 from a distance of more than 6
+            billion kilometers (4 billion miles) and about 32 degrees above
+            the ecliptic plane. In the image the Earth is a mere point of
+            light, a crescent only 0.12 pixel in size. Our planet was caught
+            in the center of one of the scattered light rays resulting from
+            taking the image so close to the Sun. This image is part of
+            Voyager 1's final photographic assignment which captured
+            family portraits of the Sun and planets.
+          </div>
+          <img src = "pale-blue-dot.jpeg" class = "pale-image" >
+          <div class = "sagan-speech">
+            LISTEN TO
+          </div>
+          <div class="wrapper">
+             <a href="#" title="Listen to the song" class="player-controls">
+                <span class="audio-label">
+                   <span>
+                     Sagan's
+                      <small> Speech</small>
+                   </span>
+                </span>
+                <span class="play"></span>
+                <span class="pause"></span>
+             </a>
+             <audio id="player">
+                <source src="carl-sagan-speech.mp3" type="audio/mp3">
+             </audio>
+          </div>
         </div>
-        <div class = "sagan-speech">
-          LISTEN TO
-        </div>
-        <div class="wrapper">
-           <a href="#" title="Listen to the song" class="player-controls">
-              <span class="audio-label">
-                 <span>
-                   Sagan's
-                    <small> Speech</small>
-                 </span>
-              </span>
-              <span class="play"></span>
-              <span class="pause"></span>
-           </a>
-           <audio id="player">
-              <source src="carl-sagan-speech.mp3" type="audio/mp3">
-           </audio>
+      <div class = "slide2">
+        <div class = "text-wrapper-container" onmouseover = "slow()" onmouseout = "slow()">
+          <div class = "text-wrapper">
+            You know where we are now, but, how did we get here? You know where we are now, but, how did we get here?
+          </div>
         </div>
       </div>
+      <div class = "slide3">
+        <div class = "slide3-container">
+          <img src="the-big-bang.jpg" height = "380vh" class = "universe-image">
+            <br>
+            <div class = "universe">THE UNIVERSE</div>
+             was formed in the Big Bang almost 14 billion years ago.
+        </div>
+      </div>
+      <div class = "slide4">
+        <div class = "slide4-container">
+          <div class = "alien" onclick = "alienFunction()">👽🌌</div>
+          <br>
+          <b class = "question">How many years after the Big Bang was our solar system formed?</b>
+          <br>
+          <div class = "outer">
+            <div class = "box a"  onclick = "right()">
+              4 billion
+            </div><!--
+          --><div class = "box b" onclick = "wrong()">
+              1 million
+            </div>
+          </div>
 
+        </div>
+      </div>
     </div>
     <div class="box-2">
 
+      <div class = "slide5">
 
+        <div class = "slide5-container" onclick = "pause()">
+          <table class = "tab" >
+            <tr>
+                <td onmouseover = "newton()">
+                  If I have seen further than others, it is by standing upon the shoulders of giants.
+                  <br>
+                  <div class = "quote-name">-Isaac Newton</div>
+                  <img src = "newton.jpg" alt = "picture of Isaac Newton" class = "newton" id ="slide5">
+                </td>
+            </tr>
+            <tr>
+              <td onmouseover = "hawking()">
+                Intelligence is the ability to adapt to change.
+                <br>
+                <div class = "quote-name">-Stephen Hawking</div>
+                <img src = "hawking.jpg" alt = "picture of Stephen Hawking" class = "hawking"id ="slide5">
+              </td>
+            </tr>
+            <tr>
+              <td onmouseover = "tyson()">
+                Knowing how to think empowers you far beyond those who know only what to think.
+                <br>
+                <div class = "quote-name">-Neil deGrasse Tyson</div>
+                <img src = "neil-degrasse-tyson.jpg" alt = "picture of Neil deGrasse Tyson" class = "tyson"id ="slide5">
+              </td>
+            </tr>
+            <tr>
+              <td onmouseover = "sagan()">
+                We're made of star stuff. We are a way for the cosmos to know itself.
+                <br>
+                <div class = "quote-name">-Carl Sagan</div>
+                <img src = "carl-sagan.jpg" alt = "picture of Carl Sagan" class = "sagan"id ="slide5">
+
+              </td>
+            </tr>
+            <tr>
+              <td onmouseover = "einstein()">
+                Imagination is more important than knowledge.
+                <br>
+                <div class = "quote-name">-Albert Einstein</div>
+                <img src = "einstein.jpg" alt = "picture of Albert Einstein" class = "einstein"id ="slide5">
+
+              </td>
+            </tr>
+            <tr>
+                <td onmouseover = "newton()">
+                  If I have seen further than others, it is by standing upon the shoulders of giants.
+                  <br>
+                  <div class = "quote-name">-Isaac Newton</div>
+                  <img src = "newton.jpg" alt = "picture of Isaac Newton" class = "newton2"id ="slide5">
+                </td>
+            </tr>
+            <tr>
+              <td onmouseover = "hawking()">
+                Intelligence is the ability to adapt to change.
+                <br>
+                <div class = "quote-name">-Stephen Hawking</div>
+                <img src = "hawking.jpg" alt = "picture of Stephen Hawking" class = "hawking2"id ="slide5">
+              </td>
+            </tr>
+            <tr>
+              <td onmouseover = "tyson()">
+                Knowing how to think empowers you far beyond those who know only what to think.
+                <br>
+                <div class = "quote-name">-Neil deGrasse Tyson</div>
+                <img src = "neil-degrasse-tyson.jpg" alt = "picture of Neil deGrasse Tyson" class = "tyson2"id ="slide5">
+              </td>
+            </tr>
+            <tr>
+              <td onmouseover = "sagan()">
+                We're made of star stuff. We are a way for the cosmos to know itself.
+                <br>
+                <div class = "quote-name">-Carl Sagan</div>
+                <img src = "carl-sagan.jpg" alt = "picture of Carl Sagan" class = "sagan2"id ="slide5">
+
+              </td>
+            </tr>
+            <tr>
+              <td onmouseover = "einstein()">
+                Imagination is more important than knowledge.
+                <br>
+                <div class = "quote-name">-Albert Einstein</div>
+                <img src = "einstein.jpg" alt = "picture of Albert Einstein" class = "einstein2"id ="slide5">
+
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class = "slide6">
+        <div class = "climate-change-container">
+          <img src = "climate-change-graph-cropped.jpeg" class = "graph">
+          <img src = "global-temperature.png" class = "graph-temp">
+          <!--https://climate.nasa.gov/evidence/-->
+          <div class = "climate-change-text">
+            Does climate change exist?
+            <div class = "climate-change-text-small">
+              Ice sheets are shrinking... Oceans are warming...
+              <a href = "https://climate.nasa.gov/news/937/warming-ocean-causing-most-antarctic-ice-shelf-mass-loss/"
+              class = "global-temps"  onmouseover = "heatGraph()" onmouseout = "heatGraph()" target = "none">
+                Global temperatures are rising...
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "slide7">
+        <div class = "book-container">
+          These books will change the way you view the world.
+        </div>
+        <div class = "overall">
+          <a href = "https://www.amazon.com/Astrophysics-People-Hurry-deGrasse-Tyson/dp/0393609391/ref=sr_1_1?crid=O0BHXGYQQUI2&keywords=astrophysics+for+people+in+a+hurry&qid=1553138129&s=gateway&sprefix=astrophys%2Caps%2C156&sr=8-1"
+           target = "none"><img id = "slide7" src = "astrophysics-for.jpg" class = "astrophysics-for"></a>
+          <a href = "https://www.amazon.com/Lessons-21st-Century-Yuval-Harari/dp/0525512179/ref=sr_1_1_sspa?keywords=sapiens&qid=1553138149&s=gateway&sr=8-1-spons&psc=1"
+           target = "none"><img id = "slide7" src = "sapiens.jpg" class = "sapiens"></a>
+          <a href = "https://www.amazon.com/Androids-Dream-Electric-Sheep-inspiration/dp/0345404475/ref=sr_1_1?crid=3VZSQBR6XF725&keywords=do+androids+dream+of+electric+sheep&qid=1553138164&s=gateway&sprefix=do+a%2Caps%2C171&sr=8-1"
+           target = "none"><img id = "slide7" src = "do-androids.jpg" class = "do-androids"></a>
+          <a href = "https://www.amazon.com/Elegant-Universe-Superstrings-Dimensions-Ultimate/dp/039333810X/ref=sr_1_1?keywords=the+elegant+universe&qid=1553138192&s=gateway&sr=8-1"
+           target = "none"><img id = "slide7" src = "the-elegant.jpg" class = "the-elegant"></a>
+          <a href = "https://www.amazon.com/Fahrenheit-451-Ray-Bradbury/dp/1451673310/ref=sr_1_1?keywords=fahrenheit+451&qid=1553138209&s=gateway&sr=8-1"
+           target = "none"><img id = "slide7" src = "fahrenheit-451.jpg" class = "fahrenheit-451"></a>
+        </div>
+      </div>
+      <div class = "slide8">
+
+      </div>
+      <div class = "slide9">
+
+      </div>
+      <div class = "slide610">
+
+      </div>
     </div>
-
   </div>
   <script type="text/javascript">
     var delay = 5000;
@@ -159,7 +323,7 @@
 
 
      });
-
+     //Carl Sagan recording player
      var getaudio = $('#player')[0],
           mouseovertimer,
           audiostatus = 'off',
@@ -240,8 +404,104 @@
         audiostatus = 'off';
 
      });
+     //infinite text (slide3) slow
+     var slowBoolean = true;
+     function slow() {
+       if (slowBoolean) {
+         document.querySelector('.text-wrapper').style = "animation: textMove 8s infinite linear;";
+         slowBoolean = false;
+       }
+       else {
+         document.querySelector('.text-wrapper').style = "animation: textMove 4s infinite linear;";
+         slowBoolean = true;
+       }
+     }
+     //slide5 js
+
+     function newton(){
+       document.querySelector('.newton').style = "visibility: visible;";
+       document.querySelector('.newton2').style = "visibility: visible;";
+
+     }
+     function hawking(){
+       document.querySelector('.hawking').style = "visibility: visible;";
+       document.querySelector('.hawking2').style = "visibility: visible;";
+
+     }
+     function tyson(){
+       document.querySelector('.tyson').style = "visibility: visible;";
+       document.querySelector('.tyson2').style = "visibility: visible;";
 
 
+     }
+     function sagan(){
+       document.querySelector('.sagan').style = "visibility: visible;";
+       document.querySelector('.sagan2').style = "visibility: visible;";
+
+     }
+     function einstein(){
+       document.querySelector('.einstein').style = "visibility: visible;";
+       document.querySelector('.einstein2').style = "visibility: visible;";
+
+     }
+     var boolean = true;
+     function pause() {
+       if (boolean){
+         document.querySelector('.tab').style = "animation-play-state: paused;";
+         boolean= false;
+       }
+       else {
+         document.querySelector('.tab').style = "animation-play-state: running;";
+         boolean=true;
+       }
+     }
+     //slide6 js
+
+     var bool = true;
+     function heatGraph() {
+       if (bool) {
+         document.querySelector('.graph').style = "opacity: 0;";
+         document.querySelector('.graph-temp').style = "opacity: 1;";
+         bool = false;
+       }
+       else {
+         document.querySelector('.graph').style = "opacity: 1;";
+         document.querySelector('.graph-temp').style = "opacity: 0;";
+         bool = true;
+       }
+     }
+     //slide7
+     var lFollowX = 0,
+         lFollowY = 0,
+         x = 0,
+         y = 0,
+         friction = 1 / 30;
+
+     function moveBackground() {
+       x += (lFollowX - x) * friction;
+       y += (lFollowY - y) * friction;
+
+       translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+       $('.overall').css({
+         '-webit-transform': translate,
+         '-moz-transform': translate,
+         'transform': translate
+       });
+
+       window.requestAnimationFrame(moveBackground);
+     }
+
+     $(window).on('mousemove click', function(e) {
+
+       var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+       var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+       lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+       lFollowY = (10 * lMouseY) / 100;
+
+     });
+
+     moveBackground();
   </script>
 </body>
 </html>
