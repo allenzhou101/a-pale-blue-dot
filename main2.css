@@ -16,8 +16,8 @@ body {
     height: 100vh;
     width: 100%;
     animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-delay: 4s;
+    animation-duration: 0s;
+    animation-delay: 0s;
     animation-fill-mode: forwards;
   }
                               .text-container {
@@ -84,7 +84,7 @@ body {
     white-space: nowrap;
   }
   .box-1, .box-2 {
-    width: 500vh;
+    width: 450vh;
     height: 96vh;
     display: inline-block;
     position: fixed;
@@ -93,8 +93,8 @@ body {
     bottom: 0;
     background-color: black;
     animation-name: fadeInInfinite;
-    animation-duration: 1s;
-    animation-delay: 4s;
+    animation-duration: 0s;
+    animation-delay: 0s;
     animation-fill-mode: forwards;
   }
   @keyframes fadeInInfinite {
@@ -104,18 +104,19 @@ body {
   }
   .box-1 {
     transform: translateX(0px);
-    width: 530vh;
+    width: 600vh;
   }
   .box-2 {
-    transform: translateX(5000px);
+    transform: translateX(550vh);
   }
     /* SLIDE 0 STYLES */
     .slide0 {
-      width: 600px;
+      width: 95vh;
       height: 100%;
-      border-left: 2px solid white;
-      border-right: 2px solid white;
-      padding-left: 2vw;
+      border-left: .4vh solid white;
+      border-right: .4vh solid white;
+      padding-left: 3vh;
+      padding-right: 3vh;
       overflow: hidden;
       display: inline-block;
     }
@@ -125,7 +126,7 @@ body {
                     top: 15%;
                   }
                   .slide-0-textbox .large-text {
-                    font-size: 40px;
+                    font-size: 6vh;
                     white-space: pre-wrap;
                   }
                 .stickman {
@@ -294,21 +295,34 @@ body {
                 }
                 .circle {
                   border: 0.1em solid white;
-                  width: 20em;
-                  height: 20em;
+                  width: 50vh;
+                  height: 50vh;
                   border-radius: 50%;
                   position: relative;
                   top: 12.5%;
                   left: 50%;
                   margin-left: -10em;
                 }
+                canvas{
+                  z-index: 5;
+                  position: relative;
+                  top: 12.5vh;
+                  left: 50%;
+                  margin-left: -10em;
+                  border: 2px solid white;
+                  height: 50vh;
+                  width: 50vh;
+                  border-radius: 50%;
+                  filter: grayscale(0);
+              }
 .slide1 {
   width: 900px;
   height: 100%;
-  padding-left: 2vw;
+  padding-left: 3vh;
+  padding-right: 3vh;
   overflow: hidden;
   display: inline-block;
-  border-right: 2px solid white;
+  border-right: .4vh solid white;
 }
                           .pale-text {
                             font-size: 15vh;
@@ -319,39 +333,39 @@ body {
                             font-size: 6vh;
                           }
                           .para1 {
-                            margin: -50px 50px 0 400px;
-                            font-size: 10px;
-                            width: 400px;
+                            margin: -5vh 0vh 0 40vh;
+                            font-size: 1.5vh;
+                            width: 40vh;
                           }
                           .para2 {
-                            margin-left: 100px;
-                            width: 300px;
-                            font-size: 10px;
+                            margin-left: 10vh;
+                            width: 40vh;
+                            font-size: 1.5vh;
                             display: inline-block;
                           }
                           .pale-image {
-                            height: 150px;
-                            margin-left: 70px;
-                            margin-top: 50px;
+                            height: 25vh;
+                            margin-left: 2vh;
+                            margin-top: 0vh;
                           }
                           .sagan-speech {
                               display: inline-block;
                               text-align: right;
                               width: 100%;
-                              margin-top: 30px;
-                              transform: rotate(90deg) translateY(40px);
+                              margin-top: 3vh;
+                              transform: rotate(90deg) translateY(4vh);
                               transform-origin: right;
-                              font-size: 40px;
+                              font-size: 6vh;
                           }
                           .wrapper {
                             display: block;
-                            margin: -10px 0 0 700px;
+                            margin: -1vh 0 0 120vh;
                          }
                           .player-controls {
                          	 color: #FFF;
                          	 cursor: pointer;
                          	 display: block;
-                         	 font-size: 40px;
+                         	 font-size: 6vh;
                          	 height: 1em;
                          	 position: relative;
                          	 text-decoration: none;
@@ -386,9 +400,9 @@ body {
                          	 z-index: 5;
                          }
                           .player-controls .play::before, .player-controls .play::after, .player-controls .pause::before, .player-controls .pause::after {
-                         	 -webkit-border-radius: 1000px;
-                         	 -moz-border-radius: 1000px;
-                         	 border-radius: 1000px;
+                         	 -webkit-border-radius: 100vh;
+                         	 -moz-border-radius: 100vh;
+                         	 border-radius: 100vh;
                          	 content: "";
                          	 display: block;
                          	 position: absolute;
@@ -480,7 +494,7 @@ body {
 .slide2 {
   width: 6vh;
   height: 100%;
-  padding-left: 2vw;
+  padding-left: 5vh;
   overflow: hidden;
   display: inline-block;
 }
@@ -508,11 +522,12 @@ body {
     .slide3 {
       width: 120vh;
       height: 100%;
-      padding-left: 2vw;
+      padding-left: 3vh;
+      padding-right: 3vh;
       overflow: hidden;
       display: inline-block;
-      border-left: 2px solid white;
-      border-right: 2px solid white;
+      border-left: .4vh solid white;
+      border-right: .4vh solid white;
     }
                                                       .slide3-container {
                                                         margin-top: 4vh;
@@ -531,13 +546,14 @@ body {
     .slide4 {
       width: 110vh;
       height: 100%;
-      padding-left: 2vw;
+      padding-left: 3vh;
+      padding-right: 3vh;
       overflow: hidden;
       display: inline-block;
-      border-right: 2px solid white;
+      border-right: .4vh solid white;
     }
                                                                     .outer {
-                                                                      font-size: 15px;
+                                                                      font-size: 3vh;
                                                                     }
                                                                     .alien {
                                                                       cursor: pointer;
@@ -569,7 +585,7 @@ body {
 
                                                                     }
                                                                     .box.a {
-                                                                      margin-right: 10vw;
+                                                                      margin-right: 15vh;
                                                                       margin-top: 5vh;
                                                                     }
                                                                     .box:hover {
@@ -582,11 +598,11 @@ body {
     .slide5 {
       width: 60vh;
       height: 100%;
-      padding-left: 1.9vw;
-      padding-right: 2vw;
+      padding-left: 3vh;
+      padding-right: 3vh;
       overflow: hidden;
       display: inline-block;
-      border-right: 2px solid white;
+      border-right: .4vh solid white;
     }
 
                                             .slide5-container {
@@ -622,17 +638,17 @@ body {
                                               filter: brightness(80%);
                                             }
                                             .quote-name {
-                                              font-size: .8vw;
+                                              font-size: 2vh;
                                               font-style: italic;
                                             }
 .slide6 {
   width: 120vh;
   height: 100%;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding-left: 3vh;
+  padding-right: 3vh;
   overflow: hidden;
   display: inline-block;
-  border-right: 2px solid white;
+  border-right: .4vh solid white;
 }
                         .climate-change-container {
                           width: 100%;
@@ -669,11 +685,11 @@ body {
 .slide7 {
   width: 140vh;
   height: 100%;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding-left: 3vh;
+  padding-right: 3vh;
   overflow: hidden;
   display: inline-block;
-  border-right: 2px solid white;
+  border-right: .4vh solid white;
 }
                                         .book-container {
                                           width: 100%;
@@ -753,11 +769,11 @@ body {
 .slide8 {
   width: 60vh;
   height: 100%;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding-left: 3vh;
+  padding-right: 3vh;
   overflow: hidden;
   display: inline-block;
-  border-right: 2px solid white;
+  border-right: .4vh solid white;
 }
 
 .questions-container {
