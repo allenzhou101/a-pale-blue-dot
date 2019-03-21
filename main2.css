@@ -16,8 +16,8 @@ body {
     height: 100vh;
     width: 100%;
     animation-name: fadeIn;
-    animation-duration: 0s;
-    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-delay: 4s;
     animation-fill-mode: forwards;
   }
                               .text-container {
@@ -84,7 +84,7 @@ body {
     white-space: nowrap;
   }
   .box-1, .box-2 {
-    width: 421vh;
+    width: 500vh;
     height: 96vh;
     display: inline-block;
     position: fixed;
@@ -93,8 +93,8 @@ body {
     bottom: 0;
     background-color: black;
     animation-name: fadeInInfinite;
-    animation-duration: 0s;
-    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-delay: 4s;
     animation-fill-mode: forwards;
   }
   @keyframes fadeInInfinite {
@@ -104,6 +104,7 @@ body {
   }
   .box-1 {
     transform: translateX(0px);
+    width: 530vh;
   }
   .box-2 {
     transform: translateX(5000px);
@@ -528,7 +529,7 @@ body {
                                                         filter: sepia(100%);
                                                       }
     .slide4 {
-      width: 100vh;
+      width: 110vh;
       height: 100%;
       padding-left: 2vw;
       overflow: hidden;
@@ -549,9 +550,9 @@ body {
                                                                     .slide4-container {
                                                                       margin-left: 0%;
                                                                       width: 100%;
-                                                                      height: 40vh;
+                                                                      height: 100%;
                                                                       text-align: center;
-                                                                      margin-top: 30vh;
+                                                                      margin-top: 10vh;
                                                                       overflow: hidden;
                                                                       white-space: normal;
                                                                     }
@@ -758,3 +759,82 @@ body {
   display: inline-block;
   border-right: 2px solid white;
 }
+
+.questions-container {
+  width: 150vh;
+  height: 100%;
+  overflow: hidden;
+  padding-left: 3vh;
+  display: inline-block;
+}
+                                        .questions {
+                                          height: 100%;
+                                        }
+                                        .question-heading {
+                                          font-size: 5vh;
+                                          margin-bottom: 10vh;
+                                          position: relative;
+                                        }
+                                        .central-question-heading {
+                                          transition: 2s;
+                                          font-size: 10vh;
+                                          top: 50%;
+                                          transform: translateY(-50%);
+                                        }
+                                        .question {
+                                          font-size: 8vh;
+                                          opacity: 0.5;
+                                          margin-bottom: 70vh;
+                                          transition: opacity 0.3s;
+                                          position: relative;
+                                        }
+
+                                        .question:hover {
+                                          opacity: 1;
+                                        }
+                                        .smqb, .replay-btn {
+                                          position: relative;
+                                          top: -35vh;
+                                          left: 80%;
+                                          font-size: 4vh;
+                                          padding: .5vh;
+                                          transition: background-color .5s;
+                                          width: 8em;
+                                        }
+                                        .smqb:hover, .replay-btn:hover {
+                                          cursor: pointer;
+                                          background-color: rgb(100,100,200);
+                                        }
+                                        .smqb .down-triangle {
+                                          border-left: .3vh solid white;
+                                          border-bottom: .3vh solid white;
+                                          width: 2.5vh;
+                                          height: 2.5vh;
+                                          display: inline-block;
+                                          transform: translateY(-.5vh) rotate(-45deg);
+                                          animation: arrow-bounce 1s infinite;
+                                        }
+                                        .replay-btn {
+                                          opacity: 0;
+                                          display: none;
+                                        }
+                                        @keyframes arrow-bounce {
+                                          0% {
+                                            transform: translateY(-.5vh) rotate(-45deg);
+                                          }
+                                          50% {
+                                            transform: translateY(-1vh) rotate(-45deg);
+                                          }
+                                          100% {
+                                            transform: translateY(-.5vh) rotate(-45deg);
+                                          }
+                                        }
+                                        .fadeaway {
+                                          transition: 1s;
+                                          opacity: 0;
+                                        }
+                                        .fadein {
+                                          transition: 1s;
+                                          opacity: 1;
+                                          top: -50vh;
+                                        }

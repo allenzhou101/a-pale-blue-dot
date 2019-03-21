@@ -124,9 +124,6 @@
 
         </div>
       </div>
-    </div>
-    <div class="box-2">
-
       <div class = "slide5">
 
         <div class = "slide5-container" onclick = "pause()">
@@ -218,6 +215,10 @@
           </table>
         </div>
       </div>
+    </div>
+    <div class="box-2">
+
+
       <div class = "slide6">
         <div class = "climate-change-container">
           <img src = "climate-change-graph-cropped.jpeg" class = "graph">
@@ -252,6 +253,15 @@
            target = "none"><img id = "slide7" src = "fahrenheit-451.jpg" class = "fahrenheit-451"></a>
         </div>
       </div>
+      <div class="questions-container">
+        <div class="question-heading">WILL YOU BE THE ONE TO ANSWER THESE QUESTIONS?</div>
+        <div class="questions">
+          <div class="question">If we ever find extraterrestrial life, what will the society look like?</div>
+        </div>
+        <div class="smqb">Show more <div class="down-triangle"></div></div>
+        <div class="replay-btn">Replay</div>
+      </div>
+<!--
       <div class = "slide8">
 
       </div>
@@ -261,6 +271,7 @@
       <div class = "slide610">
 
       </div>
+-->
     </div>
   </div>
   <script type="text/javascript">
@@ -502,6 +513,86 @@
      });
 
      moveBackground();
+
+     //questions slide
+
+
+     var questions = ["Is time travel possible?", "What happens inside a black hole?", "Are tachyons real?", "Why is it harder for a bike to tilt when it’s going faster?", "What existed, if anything, before the Big Bang?"];
+    var i = 0;
+    var showMoreButton = document.querySelector(".smqb");
+    var replayBtn = document.querySelector(".replay-btn");
+
+  showMoreButton.addEventListener("click", function() {
+    if(i >= questions.length) {
+      showMoreButton.style.display = "none";
+      document.querySelector("div.question").className = "fadeaway";
+      document.querySelector(".question-heading").classList.add("central-question-heading");
+      replayBtn.style.display = "block";
+      replayBtn .classList.add("fadein");
+    } else {
+      var div =document.createElement("div");
+      div.className = "question";
+      var txt = document.createTextNode(questions[i]);
+      div.appendChild(txt);
+      document.querySelector(".questions").appendChild(div);
+
+      var elem = document.getElementsByClassName("question")[0];
+      var elem2 = document.getElementsByClassName("question")[1];
+      var pos = 0;
+      var id = setInterval(frame, .1);
+
+      function frame() {
+        if (pos == screen.height * .1) {
+          clearInterval(id);
+          document.querySelector(".questions").removeChild(document.querySelector(".questions").firstElementChild);
+          elem2.style.top=0;
+        } else {
+          pos++;
+          elem.style.top = -pos*7 + "px";
+          elem2.style.top = -pos*7 + "px";
+        }
+      }
+
+
+      i++;
+    }
+
+  });
+    replayBtn.addEventListener("click", function() {
+      replayBtn.classList.remove("fadein");
+      replayBtn.style.display = "none";
+      document.querySelector(".question-heading").classList.remove("central-question-heading");
+      document.querySelector(".questions").innerHTML = '<div class="question">If we ever find extraterrestrial life, what will the society look like?</div>';
+      showMoreButton.style.display = "block";
+      i = 0;
+    });
+
+    //big bang question interactivity
+
+        var boxA = document.querySelector('.box.a');
+    var boxB = document.querySelector('.box.b');
+      function right() {
+        boxB.style = "border-left: none; box-shadow: none; background-color: green; border-radius: 0;";
+        boxA.style = "border-right: none; margin-right: 0vw;box-shadow: none; background-color: green; border-radius: 0;";
+        boxB.innerHTML = "is correct";
+        document.querySelector('.outer').style = "pointer-events: none;";
+      }
+      function wrong() {
+        boxB.innerHTML = "wrong";
+        boxB.style = "filter: brightness(50%); pointer-events: none;";
+      }
+      var bool = true;
+      function alienFunction() {
+        if (bool){
+          document.querySelector('.container').style = "filter: sepia(100%);";
+          bool = false;
+        }
+        else {
+          document.querySelector('.container').style = "filter: sepia(0%);";
+          bool = true;
+        }
+      }
+
   </script>
 </body>
 </html>
