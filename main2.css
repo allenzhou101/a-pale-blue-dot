@@ -16,8 +16,8 @@ body {
     height: 100vh;
     width: 100%;
     animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-delay: 4s;
+    animation-duration: 0s;
+    animation-delay: 0s;
     animation-fill-mode: forwards;
   }
                               .text-container {
@@ -93,8 +93,8 @@ body {
     bottom: 0;
     background-color: black;
     animation-name: fadeInInfinite;
-    animation-duration: 1s;
-    animation-delay: 4s;
+    animation-duration: 0s;
+    animation-delay: 0s;
     animation-fill-mode: forwards;
   }
   @keyframes fadeInInfinite {
@@ -104,7 +104,7 @@ body {
   }
   .box-1 {
     transform: translateX(0px);
-    width: 600vh;
+    width: 578vh;
   }
   .box-2 {
     transform: translateX(550vh);
@@ -332,40 +332,42 @@ body {
 }
                           .pale-text {
                             font-size: 15vh;
+                            display: inline-block;
                           }
                           .pale-text-rotated {
                             transform: rotate(90deg);
                             transform-origin: bottom left;
                             font-size: 6vh;
+                            display: inline-block;
                           }
                           .para1 {
-                            margin: -5vh 0vh 0 40vh;
                             font-size: 1.5vh;
-                            width: 40vh;
+                            width:70vh;
+                            display: inline-block;
                           }
                           .para2 {
                             margin-left: 10vh;
-                            width: 40vh;
+                            width: 20vh;
                             font-size: 1.5vh;
-                            display: inline-block;
                           }
                           .pale-image {
-                            height: 25vh;
-                            margin-left: 2vh;
-                            margin-top: 0vh;
+                            height: 50vh;
+                            margin-left: -20vh;
+                            margin-top: 10vh;
+                            position: absolute;
                           }
                           .sagan-speech {
                               display: inline-block;
                               text-align: right;
                               width: 100%;
-                              margin-top: 3vh;
+                              margin-top: -3vh;
                               transform: rotate(90deg) translateY(4vh);
                               transform-origin: right;
                               font-size: 6vh;
                           }
                           .wrapper {
                             display: block;
-                            margin: -1vh 0 0 120vh;
+                            margin: -13vh 0 0 120vh;
                          }
                           .player-controls {
                          	 color: #FFF;
@@ -512,12 +514,21 @@ body {
                               height: 6vh;
                               overflow: hidden;
                               white-space: nowrap;
-
                             }
                               .text-wrapper {
                                 font-size: 4.28vh;
-                                animation: textMove 4s infinite linear;
+                                animation: textMove;
+                                animation-duration: 4s;
+                                animation-timing-function: linear;
+                                animation-iteration-count: infinite;
+                                animation-play-state: running;
                                 white-space: nowrap;
+                                transition: .2s;
+                              }
+                              .text-wrapper:hover {
+                                animation-play-state: paused;
+                                color: #42f4d7;
+
                               }
                               @keyframes textMove {
                                 100% {
@@ -657,20 +668,25 @@ body {
   border-right: .4vh solid white;
 }
                         .climate-change-container {
-                          width: 100%;
+                          width: 90%;
                           margin-top: 20vh;
+                          margin-left: 5%;
                         }
+
                           .graph {
-                            width: 110vh;
+                            width: 90%;
+                            margin-left: 5%;
                             position: relative;
                           }
                           .graph-temp {
-                            width: 110vh;
+                            text-align: center;
+                            width: 90vh;
+                            margin-left: 5vh;
                             position: absolute;
                             z-index: -1;
                             opacity: 0;
                             transition: .5s;
-                            transform: translateY(-10vh) translateX(-105vh);
+                            transform: translateY(-10vh) translateX(-90vh);
                           }
                           .climate-change-text {
                             font-size: 5vh;
