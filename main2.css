@@ -303,7 +303,7 @@ body {
                   left: 50%;
                   margin-left: -10em;
                 }
-                canvas{
+                canvas {
                   z-index: 5;
                   position: relative;
                   top: 12.5vh;
@@ -313,7 +313,13 @@ body {
                   height: 50vh;
                   width: 50vh;
                   border-radius: 50%;
-                  filter: grayscale(0);
+                  transition: .5s;
+                  animation: rotateCanvas 15s infinite linear;
+              }
+              @keyframes rotateCanvas {
+                100% {
+                  transform: rotate(-360deg);
+                }
               }
 .slide1 {
   width: 900px;
