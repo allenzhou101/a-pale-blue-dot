@@ -39,8 +39,16 @@
         <!--<div class="circle"></div>-->
         <canvas id="c"></canvas>
         <div class="slide-0-textbox">
-          <div class = "large-text">Exploring the Earth & the Cosmos</div>
-          <div class = "text">This site is currently under construction. Yeah. Right now.</div>
+          <div class = "large-text">Exploring the Earth & </div>
+          <audio controls>
+            <source src="audio/carl-sagan-speech.mp3" type="audio/mp3" style = "display: inline-block;" width=  "40%">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+          </audio>
+          <audio controls>
+            <source src="audio/classical_music.mp3" type="audio/mp3" style = "display: inline-block;" width=  "40%">
+            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+          </audio>
+          <!--<div class = "text">This site is currently under construction. Yeah. Right now.</div>-->
         </div>
       </div><!--
     --><div class = "slide1">
@@ -519,13 +527,13 @@
          lFollowY = 0,
          x = 0,
          y = 0,
-         friction = 1 / 30;
+         friction = 1 / 35;
 
      function moveBackground() {
        x += (lFollowX - x) * friction;
        y += (lFollowY - y) * friction;
 
-       translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+       translate = 'translate(' + x + 'px, ' + y + 'px) scale(1)';
 
        $('.overall').css({
          '-webit-transform': translate,
