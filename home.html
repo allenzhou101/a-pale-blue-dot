@@ -597,12 +597,12 @@
 
 
      var questions = ["Is time travel possible?", "What happens inside a black hole?", "Are tachyons real?", "Why is it harder for a bike to tilt when it’s going faster?", "What existed, if anything, before the Big Bang?"];
-    var i = 0;
+    var x = 0;
     var showMoreButton = document.querySelector(".smqb");
     var replayBtn = document.querySelector(".replay-btn");
 
   showMoreButton.addEventListener("click", function() {
-    if(i >= questions.length) {
+    if(x >= questions.length) {
       showMoreButton.style.display = "none";
       document.querySelector("div.question").className = "fadeaway";
       document.querySelector(".question-heading").classList.add("central-question-heading");
@@ -611,7 +611,7 @@
     } else {
       var div =document.createElement("div");
       div.className = "question";
-      var txt = document.createTextNode(questions[i]);
+      var txt = document.createTextNode(questions[x]);
       div.appendChild(txt);
       document.querySelector(".questions").appendChild(div);
 
