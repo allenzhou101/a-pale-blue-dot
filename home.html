@@ -39,19 +39,7 @@
         <!--<div class="circle"></div>-->
         <canvas id="c"></canvas>
         <div class="slide-0-textbox">
-          <div class = "large-text">Exploring the Earth & </div>
-          <audio controls>
-            <source src="audio/carl-sagan-speech2.mp3" type="audio/mp3">
-            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
-          </audio>
-          <audio controls>
-            <source src="audio/classical_music2.mp3" type="audio/mp3">
-            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
-          </audio>
-          <audio controls>
-            <source src="https://raw.github.com/allenzhou101/a-pale-blue-dot/blob/master/audio/Carl-Sagan-speech2.mp3" type="audio/mp3">
-            <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
-          </audio>
+          <div class = "large-text">Exploring the Earth & the Cosmos</div>
           <!--<div class = "text">This site is currently under construction. Yeah. Right now.</div>-->
         </div>
       </div><!--
@@ -88,19 +76,24 @@
             LISTEN TO
           </div>
           <div class="wrapper">
-             <a href="#" title="Listen to the song" class="player-controls">
+            <div class="buttons">
+                <button class="button" id="play-button">PLAY</button>
+                <button class="button" id="pause-button">PAUSE</button>
+                <button class="button" id = "speech">Sagan's Speech</button>
+              </div>
+              <iframe id = "video" width="560" height="315" src="https://www.youtube.com/embed/wupToqz1e2g?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+             <!--<a href="#" title="Listen to the song" class="player-controls">
                 <span class="audio-label">
                    <span>
                      Sagan's
                       <small> Speech</small>
                    </span>
                 </span>
+
                 <span class="play"></span>
                 <span class="pause"></span>
-             </a>
-             <audio id="player">
-                <source src="audio/carl-sagan-speech.mp3" type="audio/mp3">
-             </audio>
+             </a>-->
           </div>
         </div><!--
     --><div class = "slide2">
@@ -285,6 +278,47 @@
 -->
     </div>
   </div>
+  <script>
+  // global variable for the player
+  	var player;
+
+  	// this function gets called when API is ready to use
+  	function onYouTubePlayerAPIReady() {
+  	  // create the global player from the specific iframe (#video)
+  	  player = new YT.Player('video', {
+  	    events: {
+  	      // call this function when player is ready to use
+  	      'onReady': onPlayerReady
+  	    }
+  	  });
+  	}
+
+  	function onPlayerReady(event) {
+
+  	  // bind events
+  	  var playButton = document.getElementById("play-button");
+  	  playButton.addEventListener("click", function() {
+  	    player.playVideo();
+  	  });
+
+  	  var pauseButton = document.getElementById("pause-button");
+  	  pauseButton.addEventListener("click", function() {
+  	    player.pauseVideo();
+  	  });
+
+  	  var stopButton = document.getElementById("stop-button");
+  	  stopButton.addEventListener("click", function() {
+  	    player.stopVideo();
+  	  });
+
+  	}
+
+  	// Inject YouTube API script
+  	var tag = document.createElement('script');
+  	tag.src = "https://www.youtube.com/player_api";
+  	var firstScriptTag = document.getElementsByTagName('script')[0];
+  	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
   <script type="text/javascript">
     var delay = 5000;
     setTimeout(function() {

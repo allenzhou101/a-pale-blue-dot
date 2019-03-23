@@ -367,7 +367,28 @@ body {
                           }
                           .wrapper {
                             display: block;
-                            margin: -13vh 0 0 120vh;
+                            margin: -14vh 0 0 60vh;
+                         }
+                         .buttons {
+                           position: relative; margin:0 auto 1vh auto; padding:1vh; float:left;
+                           display:block; background-color:#eee; border-radius:4px; }
+                         		.button { padding:10px 20px; font-weight:bold;
+                              letter-spacing:5px; outline:none; cursor:pointer;
+                              color:white; background-color:#7F8C8D; border:none; border-radius:4px; }
+                         		#play-button { background-color: #1ed0e8; }
+                         		#play-button:hover { background-color:#20646d; }
+                         		#pause-button { background-color: black; }
+                         		#pause-button:hover { background-color:gray; }
+                         		#stop-button { background-color:#E74C3C; }
+                         		#stop-button:hover { background-color:#C0392B; }
+                            #speech {
+                              cursor: auto;
+                            }
+                         		#pause-button, #stop-button { margin-left:15px; }
+                         		iframe { margin:0 auto; width:560px; height:315px; float:left; clear:both; display:block; background-color:#eee; }
+                         #video {
+                           visibility: visible;
+                           opacity: 0;
                          }
                           .player-controls {
                          	 color: #FFF;
