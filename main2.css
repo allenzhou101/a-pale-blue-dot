@@ -339,44 +339,53 @@ body {
                             width: 45%;
                           }
                           .pale-text-rotated {
-                            transform: rotate(90deg);
+                            transform: rotate(90deg) translateY(-10vh);
                             transform-origin: bottom left;
                             font-size: 6vh;
                             display: inline-block;
+                            margin-bottom: -2vh;
                           }
                           .para1 {
                             font-size: 1.5vh;
                             width:50%;
                             display: inline-block;
+                            background-color: black;
+                            transition: .5s;
+                            cursor: pointer;
+                            color: black;
+                            border-top: .4vh solid white;
                           }
                           .para2 {
                             margin-left: -50vh;
                             width: 20vh;
                             font-size: 1.5vh;
                             display: inline-flex;
+                            background-color: black;
+                            transition: .5s;
+                            cursor: pointer;
+                            color: black;
+                            border: .4vh solid white;
                           }
-                          .pale-image {
-                            /*height: 50vh;
-                            margin-left: 10vh;
-                            margin-top: 5vh;
-                            position: absolute;*/
+                          .para1:hover, .para2:hover {
+                            background-color: white;
+                            color: black;
+                          }
+
+                          #container {
+                            perspective: 30px;
+                            display: inline-block;
                           }
 
                           #inner {
-                            margin-left: 10vh;
-                            margin-top: -50vh;
+                            margin-left: 5vh;
+                            margin-top: -1vh;
                             position: absolute;
+                            transition: transform 0.5s;
+                            -webkit-transition: transform 0.5s;
                           }
                           .pale-image-bottom {
                             height: 50vh;
-                            margin-left: 10vh;
-                            margin-top: 5vh;
-                            position: absolute;
-                            transition: 1s;
-                            transform: rotateX(0deg);
-                          }
-                          .pale-image-bottom:hover {
-                            transform: rotateX(20deg);
+
                           }
                           .text-in {
                             margin-left: 20vh;
@@ -397,7 +406,7 @@ body {
                               text-align: right;
                               width: 100%;
                               margin-top: -4vh;
-                              transform: rotate(90deg) translateY(4vh);
+                              transform: rotate(90deg) translateY(40vh);
                               transform-origin: right;
                               font-size: 6vh;
 

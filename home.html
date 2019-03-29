@@ -84,7 +84,11 @@
             </div>
           </div>
         </div>-->
-          <img src = "images/pale_blue_dot_image.jpg" class = "pale-image-bottom" onmouseover = "textIn()" onmouseout = "textOut()">
+        <div id="container">
+          <div id="inner">
+            <img src = "images/pale_blue_dot_image.jpg" class = "pale-image-bottom" onmouseover = "textIn()" onmouseout = "textOut()">
+          </div>
+        </div>
           <div class = "text-in">
             <div class = "text-inside">
             -> <br>Look again at that dot. <br>That's here. <br>That's home. <br>That's us.
@@ -308,8 +312,8 @@
     y: 0,
     updatePosition: function(event) {
       var e = event || window.event;
-      this.x = e.clientX - this._x;
-      this.y = (e.clientY - this._y) * -1;
+      this.x = e.clientX - this._x ;
+      this.y = (e.clientY - this._y) * -1 ;
     },
     setOrigin: function(e) {
       this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
