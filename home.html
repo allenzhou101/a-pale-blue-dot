@@ -7,6 +7,8 @@
   <link href = "main2.css" rel = "stylesheet">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
   <title>A Pale Blue Dot</title>
 </head>
 <body>
@@ -58,8 +60,6 @@
           <div class = "pale-text-rotated">
             A PALE BLUE DOT?
           </div>
-          <img src = "images/pale-blue-dot.jpeg" class = "pale-image" >
-
           <div class = "para2">
             This image of Earth is one of 60 frames taken by the Voyager 1
             spacecraft on February 14, 1990 from a distance of more than 6
@@ -71,30 +71,41 @@
             Voyager 1's final photographic assignment which captured
             family portraits of the Sun and planets.
           </div>
+          <!--<img src = "images/pale-blue-dot.jpeg" class = "pale-image" >
+          Look again at that dot. That's here. That's home. that's us
+        -->
+        <!--<div id="container">
+          <div id="inner">
+            <div class="demo-img">
+              <div class="demo-overlay">
+
+
+              </div>
+            </div>
+          </div>
+        </div>-->
+          <img src = "images/pale_blue_dot_image.jpg" class = "pale-image-bottom" onmouseover = "textIn()" onmouseout = "textOut()">
+          <div class = "text-in">
+            <div class = "text-inside">
+            -> <br>Look again at that dot. <br>That's here. <br>That's home. <br>That's us.
+            </div>
+          </div>
+          <div class = "sagan">Sagan's Speech</div>
+          <div class = "sagan-wrapper">
+            <div class = "sagan-click">by clicking here</div>
+            <div class = "sagan-arrow" style = "transition: 1s; display: inline-block; vertical-align: bottom;">-></div>
+          </div>
+          <div class = "bars-container" onclick = "pauseState()" onmouseover = "barsShine()" onmouseout = "barsDim()">
+            <div id = "bars" >
+            </div>
+          </div>
 
           <div class = "sagan-speech">
             LISTEN TO
           </div>
-          <div class="wrapper">
-            <div class="buttons">
-                <button class="button" id="play-button">PLAY</button>
-                <button class="button" id="pause-button">PAUSE</button>
-                <button class="button" id = "speech">Sagan's Speech</button>
-              </div>
-              <iframe id = "video" width="560" height="315" src="https://www.youtube.com/embed/wupToqz1e2g?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-             <!--<a href="#" title="Listen to the song" class="player-controls">
-                <span class="audio-label">
-                   <span>
-                     Sagan's
-                      <small> Speech</small>
-                   </span>
-                </span>
+          <div id="video-placeholder" style = "opacity: 0; pointer-events: none; position: absolute;"></div>
 
-                <span class="play"></span>
-                <span class="pause"></span>
-             </a>-->
-          </div>
         </div><!--
     --><div class = "slide2">
         <div class = "text-wrapper-container" onmouseover = "slow()" onmouseout = "slow()">
@@ -115,7 +126,7 @@
         <div class = "slide4-container">
           <div class = "alien" onclick = "alienFunction()">👽🌌</div>
           <br>
-          <b class = "question">How many years after the Big Bang was our solar system formed?</b>
+          <b class = "alien-question">How many years after the Big Bang was our solar system formed?</b>
           <br>
           <div class = "outer">
             <div class = "box a"  onclick = "right()">
@@ -279,45 +290,301 @@
     </div>
   </div>
   <script>
-  // global variable for the player
-  	var player;
+  // ===========================================================
+// See tutorial at :
+// https://css-tricks.com/animate-a-container-on-mouse-over-using-perspective-and-transform/
+// ===========================================================
 
-  	// this function gets called when API is ready to use
-  	function onYouTubePlayerAPIReady() {
-  	  // create the global player from the specific iframe (#video)
-  	  player = new YT.Player('video', {
-  	    events: {
-  	      // call this function when player is ready to use
-  	      'onReady': onPlayerReady
-  	    }
-  	  });
-  	}
+(function() {
+  // Init
+  var container = document.getElementById("container"),
+      inner = document.getElementById("inner");
 
-  	function onPlayerReady(event) {
+  // Mouse
+  var mouse = {
+    _x: 0,
+    _y: 0,
+    x: 0,
+    y: 0,
+    updatePosition: function(event) {
+      var e = event || window.event;
+      this.x = e.clientX - this._x;
+      this.y = (e.clientY - this._y) * -1;
+    },
+    setOrigin: function(e) {
+      this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
+      this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
+    },
+    show: function() {
+      return "(" + this.x + ", " + this.y + ")";
+    }
+  };
 
-  	  // bind events
-  	  var playButton = document.getElementById("play-button");
-  	  playButton.addEventListener("click", function() {
-  	    player.playVideo();
-  	  });
+  // Track the mouse position relative to the center of the container.
+  mouse.setOrigin(container);
 
-  	  var pauseButton = document.getElementById("pause-button");
-  	  pauseButton.addEventListener("click", function() {
-  	    player.pauseVideo();
-  	  });
+  //----------------------------------------------------
 
-  	  var stopButton = document.getElementById("stop-button");
-  	  stopButton.addEventListener("click", function() {
-  	    player.stopVideo();
-  	  });
+  var counter = 0;
+  var refreshRate = 10;
+  var isTimeToUpdate = function() {
+    return counter++ % refreshRate === 0;
+  };
 
-  	}
+  //----------------------------------------------------
 
-  	// Inject YouTube API script
-  	var tag = document.createElement('script');
-  	tag.src = "https://www.youtube.com/player_api";
-  	var firstScriptTag = document.getElementsByTagName('script')[0];
-  	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var onMouseEnterHandler = function(event) {
+    update(event);
+  };
+
+  var onMouseLeaveHandler = function() {
+    inner.style = "";
+  };
+
+  var onMouseMoveHandler = function(event) {
+    if (isTimeToUpdate()) {
+      update(event);
+    }
+  };
+
+  //----------------------------------------------------
+
+  var update = function(event) {
+    mouse.updatePosition(event);
+    updateTransformStyle(
+      (mouse.y / inner.offsetHeight / 2).toFixed(2),
+      (mouse.x / inner.offsetWidth / 2).toFixed(2)
+    );
+  };
+
+  var updateTransformStyle = function(x, y) {
+    var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+    inner.style.transform = style;
+    inner.style.webkitTransform = style;
+    inner.style.mozTranform = style;
+    inner.style.msTransform = style;
+    inner.style.oTransform = style;
+  };
+
+  //--------------------------------------------------------
+
+  container.onmousemove = onMouseMoveHandler;
+  container.onmouseleave = onMouseLeaveHandler;
+  container.onmouseenter = onMouseEnterHandler;
+})();
+
+  //buttong hover attract
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  var HoverButton =
+  /*#__PURE__*/
+  function () {
+    function HoverButton(el) {
+      _classCallCheck(this, HoverButton);
+
+      this.el = el;
+      this.hover = false;
+      this.calculatePosition();
+      this.attachEventsListener();
+    }
+
+    _createClass(HoverButton, [{
+      key: "attachEventsListener",
+      value: function attachEventsListener() {
+        var _this = this;
+
+        window.addEventListener('mousemove', function (e) {
+          return _this.onMouseMove(e);
+        });
+        window.addEventListener('resize', function (e) {
+          return _this.calculatePosition(e);
+        });
+      }
+    }, {
+      key: "calculatePosition",
+      value: function calculatePosition() {
+        TweenMax.set(this.el, {
+          x: 0,
+          y: 0,
+          scale: 1
+        });
+        const box = this.el.getBoundingClientRect();
+        this.x = box.left + box.width * 0.5;
+        this.y = box.top + box.height * 0.5;
+        this.width = box.width;
+        this.height = box.height;
+      }
+    }, {
+      key: "onMouseMove",
+      value: function onMouseMove(e) {
+        let hover = false;
+        let hoverArea = this.hover ? 0.7 : 0.5;
+        let x = e.clientX - this.x;
+        let y = e.clientY - this.y;
+        let distance = Math.sqrt(x * x + y * y);
+
+        if (distance < this.width * hoverArea) {
+          hover = true;
+
+          if (!this.hover) {
+            this.hover = true;
+          }
+
+          this.onHover(e.clientX, e.clientY);
+        }
+
+        if (!hover && this.hover) {
+          this.onLeave();
+          this.hover = false;
+        }
+      }
+    }, {
+      key: "onHover",
+      value: function onHover(x, y) {
+        TweenMax.to(this.el, 0.4, {
+          x: (x - this.x) * 0.4,
+          y: (y - this.y) * 0.4,
+          scale: 1.15,
+          ease: Power2.easeOut
+        });
+        this.el.style.zIndex = 10;
+      }
+    }, {
+      key: "onLeave",
+      value: function onLeave() {
+        TweenMax.to(this.el, 0.7, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          ease: Elastic.easeOut.config(1.2, 0.4)
+        });
+        this.el.style.zIndex = 1;
+      }
+    }]);
+
+    return HoverButton;
+  }();
+  //var tester = document.querySelector('.bars-container');
+  //new HoverButton(tester);
+
+
+  </script>
+  <script>
+//slide1
+var textInBoolean = true;
+function textIn() {
+    document.querySelector('.text-inside').style.transform = "translateX(0vh)";
+    //document.querySelector('.pale-image-bottom').style.filter = "sepia(100%)";
+    setTimeout(function myFuntion() {
+      //document.querySelector('.pale-image-bottom').style.filter = "sepia(0%)";
+    }, 500);
+}
+function textOut() {
+  if (textInBoolean) {
+    document.querySelector('.text-inside').style.transform = "translateX(40vh)";
+    textInBoolean = false;
+  }
+  else {
+    document.querySelector('.text-inside').style.transform = "translateX(-40vh)";
+    textInBoolean = true;
+  }
+
+
+}
+  var player,
+      time_update_interval = 0;
+
+  function onYouTubeIframeAPIReady() {
+      player = new YT.Player('video-placeholder', {
+          width: 0,
+          height: 0,
+          videoId: 'wupToqz1e2g'
+      });
+  }
+
+
+  // Playback
+  var booleanAudio = true;
+  $('#bars').on('click', function () {
+    if (booleanAudio) {
+      player.playVideo();
+      booleanAudio = false;
+    }
+    else {
+      player.pauseVideo();
+      booleanAudio = true;
+    }
+  });
+
+
+  function createAudio() {
+    var bar = document.querySelector('#bars');
+    var left = -3;
+    for (var i = 0; i < 10; i++) {
+      var div = document.createElement("div");
+      div.classList.add('bar' + i);
+      left += 4;
+      var animDuration = 400 + Math.random()*400;
+      div.style = "left:" + left + "px; animation: sound " + animDuration + "ms -800ms linear infinite alternate; background: #42f4e8; bottom: 1px; height: 3px; position: absolute; width: 3px; ";
+      bar.appendChild(div);
+    }
+  }
+  createAudio();
+  setTimeout(pauseState, 10);
+
+  var firstClick = true;
+  var first = true;
+  function pauseState(){
+    //document.querySelector('.bar0').style = "height: 10px;"
+        if (firstClick) {
+          var left2 = -3;
+          for (var i = 0; i < 10; i++) {
+            left2 += 4;
+            //document.querySelector('.bar' + i).style = "opacity: .35; left: " + left2 + "px; animation: sound " + (100) + "ms linear 1 backwards alternate; background: #E20074; bottom: 1px; height: 3px; position: absolute; width: 3px;";
+            document.querySelector('.bar' + i).style.webkitAnimationPlayState = "paused";
+
+        }
+        //player.pauseVideo();
+
+        document.querySelector('#bars').style.filter = "brightness(50%)";
+        firstClick = false;
+      }
+      else {
+        var left = -3;
+        for (var i = 0; i < 10; i++) {
+          left += 4;
+          var animDuration = 400 + Math.random()*400;
+          //document.querySelector('.bar' + i).style = "left:" + left + "px; animation: sound " + animDuration + "ms -800ms linear infinite alternate; background: #E20074; bottom: 1px; height: 3px; position: absolute; width: 3px; ";
+          document.querySelector('.bar' + i).style.webkitAnimationPlayState = "running";
+          document.querySelector('#bars').style.webkitAnimationPlayState = "paused";
+        }
+        if (first) {
+          document.querySelector('.sagan').style.transform = "translateX(20vh)";
+          document.querySelector('.sagan-click').style.transform = "translateY(-10vh)";
+          document.querySelector('.sagan-arrow').style.transform = "translateY(-10vh)";
+          first = false;
+        }
+        //player.playVideo();
+        document.querySelector('#bars').style.filter = "brightness(100%)";
+        firstClick = true;
+      }
+  }
+  function barsShine() {
+      for (var i = 0; i < 10; i++) {
+        //document.querySelector('.bar' + i).style.filter = "brightness(100%)";
+      }
+      document.querySelector('#bars').style.animation = "none";
+  }
+  function barsDim() {
+    for (var i = 0; i < 10; i++) {
+      //document.querySelector('.bar' + i).style.filter = "brightness(50%)";
+    }
+      //document.querySelector('#bars').style.webkitAnimationPlayState = "running";
+  }
   </script>
   <script type="text/javascript">
     var delay = 5000;
@@ -597,12 +864,12 @@
 
 
      var questions = ["Is time travel possible?", "What happens inside a black hole?", "Are tachyons real?", "Why is it harder for a bike to tilt when it’s going faster?", "What existed, if anything, before the Big Bang?"];
-    var x = 0;
+    var qn = 0;
     var showMoreButton = document.querySelector(".smqb");
     var replayBtn = document.querySelector(".replay-btn");
 
   showMoreButton.addEventListener("click", function() {
-    if(x >= questions.length) {
+    if(qn >= questions.length) {
       showMoreButton.style.display = "none";
       document.querySelector("div.question").className = "fadeaway";
       document.querySelector(".question-heading").classList.add("central-question-heading");
@@ -611,7 +878,7 @@
     } else {
       var div =document.createElement("div");
       div.className = "question";
-      var txt = document.createTextNode(questions[x]);
+      var txt = document.createTextNode(questions[qn]);
       div.appendChild(txt);
       document.querySelector(".questions").appendChild(div);
 
@@ -633,7 +900,7 @@
       }
 
 
-      i++;
+      qn++;
     }
 
   });
@@ -643,7 +910,7 @@
       document.querySelector(".question-heading").classList.remove("central-question-heading");
       document.querySelector(".questions").innerHTML = '<div class="question">If we ever find extraterrestrial life, what will the society look like?</div>';
       showMoreButton.style.display = "block";
-      i = 0;
+      qn = 0;
     });
 
     //big bang question interactivity
