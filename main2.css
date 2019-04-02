@@ -338,35 +338,52 @@ body {
                             display: inline-block;
                             width: 45%;
                           }
+
+                          .para1 {
+                            font-size: 1.5vh;
+                            display: inline-block;
+                            background-color: black;
+                            transition: .5s;
+                            cursor: pointer;
+                            color: black;
+                            width: 50%;
+                            border-top: .4vh solid white;
+                          }
+                          .para2-container {
+                            display: inline-block;
+                            width: 20vh;
+                            height: 68vh;
+                            border: .4vh solid white;
+                            margin-left: 2vh;
+                          }
+                          .para2-container:hover .para2 {
+                            background-color: white;
+                            color: black;
+                          }
+                          .para2-container:hover .pale-text-rotated {
+                            transform: rotate(90deg) translateY(-25vh);
+                          }
                           .pale-text-rotated {
                             transform: rotate(90deg) translateY(-10vh);
-                            transform-origin: bottom left;
+                            transform-origin: left;
                             font-size: 6vh;
                             display: inline-block;
                             margin-bottom: -2vh;
-                          }
-                          .para1 {
-                            font-size: 1.5vh;
-                            width:50%;
-                            display: inline-block;
-                            background-color: black;
+                            white-space: nowrap;
                             transition: .5s;
-                            cursor: pointer;
-                            color: black;
-                            border-top: .4vh solid white;
+
                           }
                           .para2 {
-                            margin-left: -50vh;
-                            width: 20vh;
-                            font-size: 1.5vh;
+                            transform: translateY(-9vh);
+                            margin-top: -6vh;
+                            font-size: 1.6vh;
                             display: inline-flex;
-                            background-color: black;
+                            background-color: transparent;
                             transition: .5s;
                             cursor: pointer;
-                            color: black;
-                            border: .4vh solid white;
+                            color: transparent;
                           }
-                          .para1:hover, .para2:hover {
+                          .para1:hover {
                             background-color: white;
                             color: black;
                           }
@@ -377,7 +394,7 @@ body {
                           }
 
                           #inner {
-                            margin-left: 5vh;
+                            margin-left: 10vh;
                             margin-top: -1vh;
                             position: absolute;
                             transition: transform 0.5s;
@@ -387,26 +404,37 @@ body {
                             height: 50vh;
 
                           }
-                          .text-in {
-                            margin-left: 20vh;
-                            position: absolute;
-                            margin-top: -49vh;
-                            margin-left: 87vh;
-                            color: lightblue;
-                            overflow: hidden;
+                          .text-in-container {
+
                             pointer-events: none;
+                            position: absolute;
+
+                            margin-top: -51vh;
+                            margin-left: 68vh;
+                          }
+                          .text-in {
+                            overflow: hidden;
+                            color: lightblue;
+                            margin-left: 10vh;
+                            width: 40vh;
 
                           }
                           .text-inside {
                             transition: 1s;
                             transform: translateX(-40vh);
                           }
+                          .text-inside2 {
+                            transition: 1s;
+                            transform: translateX(0vh);
+                            font-weight: bold;
+                            font-size: 4vh;
+                          }
                           .sagan-speech {
                               display: inline-block;
                               text-align: right;
                               width: 100%;
                               margin-top: -4vh;
-                              transform: rotate(90deg) translateY(40vh);
+                              transform: rotate(90deg) translateY(5vh);
                               transform-origin: right;
                               font-size: 6vh;
 
